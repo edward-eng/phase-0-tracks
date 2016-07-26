@@ -14,3 +14,12 @@ section.job {
 ul.edward-derek {
 	font-size: .8em;
 }
+
+section.job:hover {
+	color: black;
+	background-color: grey;
+}
+
+section > section.job {
+	background-color: green;
+}
