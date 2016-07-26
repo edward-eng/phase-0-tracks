@@ -1,0 +1,16 @@
+section#contact-info {
+	font-size: .8em;
+}
+
+section.job {
+	color: #e9e5dc;
+	border: 1px solid black;
+	border-radius: 25px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+ul.edward-derek {
+	font-size: .8em;
+}
