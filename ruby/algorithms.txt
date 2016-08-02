@@ -1,0 +1,37 @@
+# Elevator Instructions for Robots #
+
+- Decide if you want to go up or down.
+- Move forward towards the elevator.
+- If the elevator doors are closed:
+	- Push the open button.
+- Otherwise:
+	- Look to see if the elevator is going up or down.
+		- If the elevator is going in the direction you want to go:
+			- Get in.
+				- Otherwise:
+					- Wait for the doors to close, then push the open button.
+- Move forward into the elevator.
+- Decide what floor you want to go to.
+- Look at each row of buttons.
+	- If the floor you want to go to is there:
+		- Push the button.
+			- Otherwise:
+				- Get out of the elevator.
+
+# Taking a Shower #
+
+- Walk into the bathroom.
+- Turn on the lights.
+- Turn on the shower.
+- Until the water is at the right temperature:
+	- Adjust and test the water with your hand.
+- If the water is at the right temperature:
+	- Take off your clothes.
+	- Get into the shower.
+- Otherwise:
+	- Adjust water temperature.
+- Lather yourself with shampoo and soap.
+- Rinse yourself off with water.
+- Step out of the shower.
+- Dry yourself off.
+- Put on clean clothes.
