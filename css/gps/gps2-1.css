@@ -1,0 +1,38 @@
+.column-1 {
+	background: yellow;
+	/* display: inline-block;*/
+	width: 45%;
+	/* vertical-align: top;*/
+	float: left;
+	padding: 10px;
+	margin: 10px;
+}
+
+.column-2 {
+	background: green;
+	/* display: inline-block;*/
+	width: 45%;
+	/* vertical-align: top;*/
+	float: right;
+	padding: 10px;
+	margin: 10px;
+}
+
+header {
+	background: blue;
+	padding: 10px;
+	margin: 10px;
+	text-align: center;
+}
+
+footer {
+	background: purple;
+	clear: both;
+	padding: 10px;
+	margin: 10px;
+	text-align: center;
+}
+
+body {
+	font-family: arial;
+}
