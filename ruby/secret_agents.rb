@@ -43,3 +43,6 @@ end
 
 puts decrypt_password("bcd")
 puts decrypt_password("afe")
+
+# This encrypts the password then decrypts it. It evaluates the statement starting from inside the brackets outward.
+puts decrypt_password(encrypt_password("swordfish"))
