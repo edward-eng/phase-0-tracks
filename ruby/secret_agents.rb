@@ -19,6 +19,7 @@ p secret_password
 end
 
 puts encrypt_password("abc")
+puts encrypt_password("zed")
 
 # create an decrypt password method
 # decrypt password method takes a string as a parameter
@@ -40,4 +41,5 @@ def decrypt_password(secret_password)
 	p secret_password
 end
 
-puts decrypt_password("abc")
+puts decrypt_password("bcd")
+puts decrypt_password("afe")
