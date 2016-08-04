@@ -18,8 +18,8 @@ end
 p secret_password
 end
 
-puts encrypt_password("abc")
-puts encrypt_password("zed")
+# puts encrypt_password("abc")
+# puts encrypt_password("zed")
 
 # create an decrypt password method
 # decrypt password method takes a string as a parameter
@@ -41,8 +41,30 @@ def decrypt_password(secret_password)
 	p secret_password
 end
 
-puts decrypt_password("bcd")
-puts decrypt_password("afe")
+# puts decrypt_password("bcd")
+# puts decrypt_password("afe")
 
 # This encrypts the password then decrypts it. It evaluates the statement starting from inside the brackets outward.
-puts decrypt_password(encrypt_password("swordfish"))
+# puts decrypt_password(encrypt_password("swordfish"))
+
+# Ask user is he or she wants to decrypt or encrypt password
+# If the user wants to decrypt the password, run the decrypt method
+# If the user wants to encrypt the password, run the encrypt method
+# If the user inputs invalid data, print error message
+# Print the results
+
+puts "Do you want to decrypt or encrypt your password?"
+answer = gets.chomp
+
+if 	answer == "decrypt"
+	puts "Okay, what's your secret password?"
+	password = gets.chomp
+	puts "Your decrypted password is #{decrypt_password(password)}"
+elsif
+	answer == "encrypt"
+	puts "Okay, what's your secret password"
+	password = gets.chomp
+	puts "Your encrypted password is #{encrypt_password(password)}"
+else
+	puts "Oops, sorry looks like it's an invalid password."
+end
