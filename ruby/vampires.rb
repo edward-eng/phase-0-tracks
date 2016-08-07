@@ -7,10 +7,7 @@ employee_surveys = gets.chomp.to_i
 
 # Start the first survey and repeat the process until the number of surveys requested is complete.
 
-employee_surveys = 1
-
-loop do
-	employee_surveys += 1
+until employee_surveys == 0
 
 # Ask the user his or her name. Set the input as the value for name variable.
 
@@ -81,7 +78,8 @@ end
 
 puts "Thanks."
 	
-	break if employee_surveys > 2
+	employee_surveys = employee_surveys - 1
+	
 end
 
 print "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
