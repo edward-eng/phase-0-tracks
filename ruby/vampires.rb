@@ -34,7 +34,9 @@ correct_age = current_year - birth_year
 # 10. Check to see if the user input a name of either Drake Cula or Tu Fang. If so, print the result "Definitely a vampire."
 # 11. If the user inputs some other kind of data, print the result, "Results inconclusive."
 
-if name == "Drake Cula" || "Tu Fang"
+if name == "Drake Cula"
+	puts "Definitely a vampire."
+	elsif name == "Tu Fang"
 	puts "Definitely a vampire."
 	elsif age == correct_age && (garlic_bread == "y" || health_insurance == "y")
 	puts "Probably not a vampire."
