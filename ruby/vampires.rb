@@ -1,3 +1,5 @@
+# Vampire Detection Survey
+
 # Ask how many employees will be processed.
 
 puts "How many employees do you want to process?"
@@ -81,3 +83,5 @@ puts "Thanks."
 	
 	break if employee_surveys > 2
 end
+
+print "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
