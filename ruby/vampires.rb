@@ -59,5 +59,25 @@ if name == "Drake Cula"
 else
 	puts "Results inconclusive."
 end
+
+# Ask the user what he or she is allergic to.
+
+puts "What are you allergic to?"
+input = gets.chomp
+
+if input == "sunshine"
+	puts "Probably a vampire."
+end
+
+until input == "done"
+	puts "What else are you allergic to? If nothing, type 'done'."
+	input = gets.chomp
+	if input == "sunshine"
+		puts "Probably a vampire."
+	end
+end
+
+puts "Thanks."
+	
 	break if employee_surveys > 2
 end
