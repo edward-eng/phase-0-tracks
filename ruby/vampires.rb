@@ -1,3 +1,5 @@
+# Vampire Detection Survey
+
 # Ask how many employees will be processed.
 
 puts "How many employees do you want to process?"
