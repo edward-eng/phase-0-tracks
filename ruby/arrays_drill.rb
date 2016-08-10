@@ -1,3 +1,11 @@
+def build_array(itemA, itemB, itemC)
+	build_array = [itemA, itemB, itemC]
+end
+
+def add_to_array(arr, value)
+	arr << value
+end
+
 empty_array = []
 p empty_array
 
@@ -20,3 +28,6 @@ new_array = [1, 2, 3]
 
 combined_array = empty_array + new_array
 p combined_array
+
+p build_array(1, "two", nil)
+p add_to_array(["a", "b", "c", 1, 2], 3)
