@@ -1,7 +1,22 @@
 # Client Database
 
-# Ask the user to fill out the form as completely as possible.
+# Ask the user to fill in the information as completely as possible.
 # Convert the inputs to the correct data types.
+
+puts "Hi, please answer the following questions."
+
+puts "What's your client's name?"
+name = gets.chomp
+
+puts "What's your client's age?"
+age = gets.chomp.to_i
+
+puts "What decor theme has your client chosen?"
+decor_theme = gets.chomp
+
+puts "Does your client live in the city?"
+residence = gets.chomp
+
 # Store the inputs into variables.
 # Print the results to the console so the user can see what he or she has filled in.
 # Ask the user if he or she wants to update the values of any keys.
