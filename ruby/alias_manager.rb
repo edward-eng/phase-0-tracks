@@ -1,13 +1,20 @@
 # Fake Name Generator
 
+# User Interface
+
+loop do
+	puts "Do you want to scramble a name? (yes or 'q' for quit)"
+	input = gets.chomp
+	break if input == 'q'
+
 # Ask the user for his or her first name.
-puts "What's your first name?"
+puts "Please enter first name:"
 
 # Get the response and store it in a variable called <first_name>.
 first_name = gets.chomp
 
 # Ask the user for his or her last name.
-puts "What's your last name?"
+puts "Please enter last name:"
 
 # Get the response and store it in a variable called <last_name>.
 last_name = gets.chomp
@@ -26,6 +33,8 @@ new_string_name = swap_name.join(' ')
 
 # Take the <new_string_name> and break each name up into individual letters and store the result in an array. Then store that array in a new variable called <split_new_string_name>.
 split_new_string_name = new_string_name.split('')
+
+# Business Logic
 
 # Make a variable called <vowels> and store the array of vowels 'a, e, i, o, u' in the variable.
 vowels = ['a', 'e', 'i', 'o', 'u']
@@ -58,3 +67,5 @@ end
 
 # Print the result to the console.
 p split_new_string_name
+
+end
