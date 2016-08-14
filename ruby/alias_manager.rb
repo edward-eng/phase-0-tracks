@@ -19,8 +19,11 @@ puts "Please enter last name:"
 # Get the response and store it in a variable called <last_name>.
 last_name = gets.chomp
 
+# Business Logic
+
 # Add the first and last name variables together with a space between them and store the result in another variable called <full_name>.
 full_name = "#{[first_name, last_name].join(' ')}"
+p full_name
 
 # Break the <full_name> up into two strings and store the result in an array. Then store the array in a new variable called <split_name>.
 split_name = full_name.split
@@ -33,8 +36,6 @@ new_string_name = swap_name.join(' ')
 
 # Take the <new_string_name> and break each name up into individual letters and store the result in an array. Then store that array in a new variable called <split_new_string_name>.
 split_new_string_name = new_string_name.split('')
-
-# Business Logic
 
 # Make a variable called <vowels> and store the array of vowels 'a, e, i, o, u' in the variable.
 vowels = ['a', 'e', 'i', 'o', 'u']
@@ -67,5 +68,9 @@ end
 
 # Print the result to the console.
 p split_new_string_name
+fake_name = split_new_string_name.join('')
+p fake_name
+
+puts "#{full_name} is also known as #{fake_name}."
 
 end
