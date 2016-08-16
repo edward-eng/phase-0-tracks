@@ -57,9 +57,29 @@ end
 
 grocery_list = Hash.new
 
-# Tests
-# puts create_list(grocery_list, "carrots apples cereal pizza")
-# puts add_item(grocery_list, "potato", 2)
-# puts remove_item(grocery_list, "apples")
-# puts update_quantity(grocery_list, "cereal", 45)
-# display_list(grocery_list)
+# Release 3: Test your solution
+
+puts "Create a new list"
+puts create_list(grocery_list, "")
+puts "\n"
+
+puts "Add the following items to your list"
+add_item(grocery_list, "Lemonade", 2)
+add_item(grocery_list, "Tomatoes", 3)
+add_item(grocery_list, "Onions", 1)
+add_item(grocery_list, "Ice Cream", 4)
+puts grocery_list
+puts "\n"
+
+puts "Remove the Lemonade from your list"
+remove_item(grocery_list, "Lemonade")
+puts grocery_list
+puts "\n"
+
+puts "Update the Ice Cream quantity to 1"
+update_quantity(grocery_list, "Ice Cream", 1)
+puts grocery_list
+puts "\n"
+
+puts "Print out your list (Is this readable and nice looking)?"
+display_list(grocery_list)
