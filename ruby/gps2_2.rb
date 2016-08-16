@@ -83,3 +83,29 @@ puts "\n"
 
 puts "Print out your list (Is this readable and nice looking)?"
 display_list(grocery_list)
+
+# Release 5: Reflect
+
+# What did you learn about pseudocode from working on this challenge?
+
+# Pseudocode really helps to break down a challenge into bite-sized pieces so that you can write simple and readable code. Plus, it allows you to test your code bit by bit as you move through the solution to the challenge.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+
+# Using a hash seemed to be good for this challenge since we wanted to add items AND quantities to a list. So using a hash seemed to simplify the process of creating the list.
+
+# What does a method return?
+
+# A method returns the last line of code in the method. In this case, we're returning an updated hash after we run each method.
+
+# What kind of things can you pass into methods as arguments?
+
+# You can pass in things like hashes, strings, and integers into arguments.
+
+# How can you pass information between methods?
+
+# You can use instance variables.
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+
+# I clarified what a method is returning. I also better solidified defining methods and calling them. I'm still a little shaky on the syntax and usage of hashes and arrays; moreso with hashes, though.
