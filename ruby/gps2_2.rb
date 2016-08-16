@@ -39,7 +39,7 @@ end
   # find the key in the hash and reassign it its new value.
 # output: return updated hash with item quantity updated
 def update_quantity(hash, food_item, new_quantity)
-	hash.merge!(food_item => new_quantity)
+	hash[food_item] = new_quantity
 end
 
 # Method to print a list and make it look pretty
