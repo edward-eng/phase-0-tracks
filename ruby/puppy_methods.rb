@@ -36,3 +36,39 @@ lab.speak(4)
 lab.roll_over("*rolls over*")
 lab.dog_years(1)
 lab.tail_wag(50)
+
+class Fruits
+
+	def skin_color(int)
+		puts "I changed my skin color #{int} times before I was picked!!!"
+	end
+
+	def initialize
+  	puts "Initializing new fruits instance ..."
+  	end
+
+	def food(string)
+		puts "I am turned into a #{string}!"
+	end	
+
+end
+
+blueberry = Fruits.new
+
+blueberry.skin_color(3)
+blueberry.food("pancakes")
+
+# 5.times do |x|
+#   puts "#{x} is cool"
+# end
+
+# empty_array = []
+
+# 50.times 
+# 	# puts blueberry = Fruits.new
+# 	array = []
+# 	array << blueberry = Fruits.new
+# 	puts array
+# end
+
+# array.each {|item| blueberry.skin_color(3), blueberry.food("pancakes")}
