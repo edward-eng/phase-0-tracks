@@ -38,7 +38,7 @@ class Santa
 	end
 end
 
-king_santa = Santa.new("Joe", "male", "Cantonese")
+king_santa = Santa.new("Joe", "male", "Brazillian")
 king_santa.about
 puts "#{king_santa.name} is a baby."
 puts "#{king_santa.name} is #{king_santa.age} old and is #{king_santa.ethnicity}."
@@ -48,3 +48,25 @@ king_santa.name = "Happy Joe"
 puts "#{king_santa.name} says I'll be back next year!"
 king_santa.celebrate_birthday(1)
 king_santa.get_mad_at("Rudolph")
+
+# Make an empty container for all the santas we create.
+santas = []
+
+# Make an array of names to choose from for each santa we create.
+names = ["Mary", "Kelly", "Jessica", "Bob", "Chris", "John"]
+
+# Make an array of example genders to choose from for each santa we create.
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+
+# Make an arry of example ethnicities to choose from for each santa we create.
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+i = 0
+
+until i == 25
+	age = rand(100)
+	puts "Creating santa named #{names.sample} whose gender is #{example_genders.sample}, ethnicity is #{example_ethnicities.sample}, and is #{age}."
+	# Choose a random number between 0 and 140.
+	# Set this number to the new santa's age.
+	i += 1
+end
