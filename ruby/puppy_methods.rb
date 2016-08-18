@@ -66,9 +66,18 @@ blueberry.food("pancakes")
 
 # 50.times 
 # 	# puts blueberry = Fruits.new
-# 	array = []
-# 	array << blueberry = Fruits.new
-# 	puts array
 # end
 
 # array.each {|item| blueberry.skin_color(3), blueberry.food("pancakes")}
+
+# empty_array = []
+
+# i = 0
+
+# until i == 50
+#   blueberry = Fruits.new
+#   empty_array << blueberry = Fruits.new
+#   i += 1
+# end
+
+# p empty_array
