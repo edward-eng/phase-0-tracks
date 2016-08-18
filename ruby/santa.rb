@@ -1,4 +1,7 @@
 class Santa
+	attr_reader :age, :ethnicity
+	attr_accessor :name, :gender
+
 	def initialize(name, gender, ethnicity)
 		puts "Initializing Santa instance ..."
 		@name = name
@@ -31,33 +34,7 @@ class Santa
 
 	def get_mad_at(reindeer_name)
 		new_reindeer_ranking = @reindeer_ranking.rotate(1)
-		puts "#{name} got made at #{reindeer_name} and the new reindeer ranking is...#{new_reindeer_ranking}"
-	end
-
-	# getter methods for attributes
-	def name
-		@name
-	end
-
-	def gender
-		@gender
-	end
-
-	def age
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
-	end
-
-	# setter methods for attributes
-	def name=(new_name)
-		@name = new_name
-	end
-
-	def gender=(new_gender)
-		@gender = new_gender
+		puts "#{name} got mad at #{reindeer_name} and the new reindeer ranking is...#{new_reindeer_ranking}"
 	end
 end
 
