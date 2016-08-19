@@ -12,7 +12,7 @@
 # puts Shout.yelling_happily("Ahhhhh")
 
 module Shout
-  def self.yell_angrily(words)
+  def yell_angrily(words)
     words + "!!!" + " :("
   end
 end
@@ -26,7 +26,7 @@ class Pirate
 end
 
 smokey = Bear.new
-smokey.yell_angrily("FIRE")
+puts smokey.yell_angrily("FIRE")
 
 jack = Pirate.new
-jack.yelling_happily("WHERE'S MY BEER")
+puts jack.yell_angrily("WHERE'S MY BEER")
