@@ -45,17 +45,10 @@ fire_breathing_dragon.fly(10000)
 # User Interface
 
 # Ask the user if he or she would like to make a dragon.
-puts "Would you like to make a dragon? (yes or 'q' for quit)"
-make_dragon = gets.chomp
-
-if make_dragon != "q"
+puts "Would you like to make a dragon? (y/n)"
+answer = gets.chomp
+Dragon.new if answer == "y"
 
 # Ask the user for a dragon name.
-puts "What's the name of your dragon?"
-dragon_name = gets.chomp
 
 # Ask the user for the color of each dragon he or she would like to create.
-puts "What's the color of your dragon?"
-dragon_color = gets.chomp
-
-end
