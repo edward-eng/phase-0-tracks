@@ -27,8 +27,8 @@ class Santa
 		puts "And #{@name} says thanks for the #{cookie_type}!"
 	end
 
-	def celebrate_birthday(age)
-		@age + 1
+	def celebrate_birthday
+		@age += 1
 		puts "#{@name} just had a birthday and is #{age} now."
 	end
 
@@ -46,7 +46,7 @@ king_santa.speak("Ho, ho, ho! Haaaappy holidays!" )
 king_santa.eat_milk_and_cookies("snickerdoodle")
 king_santa.name = "Happy Joe"
 puts "#{king_santa.name} says I'll be back next year!"
-king_santa.celebrate_birthday(1)
+king_santa.celebrate_birthday
 king_santa.get_mad_at("Rudolph")
 
 # Make an empty container for all the santas we create.
