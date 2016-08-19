@@ -44,14 +44,34 @@ fire_breathing_dragon.fly(10000)
 
 # User Interface
 
-puts "Would you like to make a dragon? (y/n)"
+dragons = []
+
+end_program = false
+
+until end_program == true
+
+puts "Would you like to make a dragon? (y/n or 'q' for quit)"
 input = gets.chomp
 
-if input == "y"
-	puts "What's your dragon's name?"
-	dragon_name = gets.chomp
-	puts "What color is your dragon?"
-	dragon_color = gets.chomp
+	if input == "y"
+		puts "What's your dragon's name?"
+		dragon_name = gets.chomp
+		puts "What color is your dragon?"
+		dragon_color = gets.chomp
+		puts "How long does your dragon sleep for?"
+		sleep = gets.chomp.to_i
+		puts "How high does your dragon fly?"
+		flight_height = gets.chomp.to_i
+		dragon = Dragon.new(dragon_name, dragon_color)
+		dragon.hibernate(sleep)
+		dragon.fly(flight_height)
+	elsif input == "n"
+		end_program = true
+	else
+		input == "q"
+		end_program = true
+	end
+	dragons << dragon
 end
 
-dragon = Dragon.new(dragon_name, dragon_color)
+p dragons
