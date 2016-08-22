@@ -4,8 +4,8 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# The require_relative statement is referencing the state_data file. It's as if the code in the state_data file was in this file.
+# A require_relative statement searches a specific location for a file whereas a require statement might search various files for a specific file.
 require_relative 'state_data'
 
 class VirusPredictor
