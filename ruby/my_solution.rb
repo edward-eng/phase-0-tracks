@@ -98,10 +98,12 @@ alaska.virus_effects
 # Take in the information about each state and use it to create new class instances
 # Call virus effects method on each state to print out the result
 
-STATE_DATA.each do |state, population_density, population|
-  state = VirusPredictor.new(state, (state[:population_density]), (state[:population]))
-  p state
+STATE_DATA.each do |state, state_info|
+  temp_state = VirusPredictor.new(state, state_info[:population_density], state_info[:population])
+  temp_state.virus_effects
 end
+
+puts STATE_DATA.length
 
 # STATE_DATA.each do |state|
 #  state.each do |population_density, population|
