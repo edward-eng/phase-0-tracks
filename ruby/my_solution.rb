@@ -91,8 +91,23 @@ california = VirusPredictor.new("California", STATE_DATA["California"][:populati
 california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+p alaska
 alaska.virus_effects
 
+# Loop through the state data hash to access each state
+# Take in the information about each state and use it to create new class instances
+# Call virus effects method on each state to print out the result
 
+STATE_DATA.each do |state, population_density, population|
+  state = VirusPredictor.new(state, (state[:population_density]), (state[:population]))
+  p state
+end
+
+# STATE_DATA.each do |state|
+#  state.each do |population_density, population|
+#   state = VirusPredictor.new(state, population_density, population)
+#  end
+#  p state
+# end
 #=======================================================================
 # Reflection Section
