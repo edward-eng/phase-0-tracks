@@ -6,7 +6,12 @@ function reverse_string(string){
 	var array = new_string.split("");
 	var reverse_array = array.reverse();
 	var result = reverse_array.join("");
+
+	if (1 == 1){
 	console.log(result);
 }
 
+}
+
 reverse_string("hello");
+reverse_string("Magic: The Gathering");
