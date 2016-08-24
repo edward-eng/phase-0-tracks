@@ -1,5 +1,9 @@
 // Write a function that takes a string as a parameter.
-// Reverse the string by taking the first letter and moving it to the back until the last letter is the first letter.
+// Store string in a variable.
+// Split the string into individual letters and store them in an array.
+// Reverse the order of the letters in the array.
+// Put the elements of the array back together into a string.
+// Print the variable to the console if a conditional statement is true.
 
 function reverse_string(string){
 	var new_string = string;
