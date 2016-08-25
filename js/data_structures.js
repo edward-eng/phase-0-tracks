@@ -1,4 +1,4 @@
-/*var colors = ["blue", "pink", "green", "yellow"];
+var colors = ["blue", "pink", "green", "yellow"];
 console.log(colors);
 
 var names = ["Bobby", "Karen", "Jim", "Heather"];
@@ -34,7 +34,7 @@ if (colors.length == names.length){
 		console.log("You need to enter " + extra_names + " more color(s).");
 	}
 }
-*/
+
 
 /* Create a constructor function for a car
 pass arguements for make model and color
@@ -43,7 +43,7 @@ and give the car a function to say VROOOOM
 and a function to say the check engine light is on with a conditional to check the needs maintenance attribute and prints whether the light is on or off*/
 
 function Car(make, model, color) {
-	console.log("Our new car" + this);
+	console.log("Our new car:", this);
 	
 	this.make = make;
 	this.model = model;
@@ -63,3 +63,21 @@ function Car(make, model, color) {
 	console.log("CAR INITIALIZATION COMPLETE");
 }
 
+// Driver Code
+console.log("Let's build a car...");
+var car = new Car("Toyota", "Supra", "Red");
+console.log(car);
+car.accelerate();
+car.check_engine_light();
+car.maintenance = false;
+car.check_engine_light();
+
+console.log("==========");
+
+console.log("Let's build another car...");
+var another_car = new Car("Ford", "Focus RS", "Green");
+console.log(another_car);
+another_car.accelerate();
+another_car.check_engine_light();
+another_car.maintenance = false;
+another_car.check_engine_light();
