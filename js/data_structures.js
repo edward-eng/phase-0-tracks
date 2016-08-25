@@ -1,4 +1,4 @@
-var colors = ["blue", "pink", "green", "yellow"];
+/*var colors = ["blue", "pink", "green", "yellow"];
 console.log(colors);
 
 var names = ["Bobby", "Karen", "Jim", "Heather"];
@@ -33,4 +33,16 @@ if (colors.length == names.length){
 		var extra_names = names.length - colors.length;
 		console.log("You need to enter " + extra_names + " more color(s).");
 	}
+}
+*/
+
+/* Create a constructor function for a car
+pass arguements for make model and color
+this will have an attribute that also says whether the car needs maintenance or not true or false
+and give the car a function to say VROOOOM
+and a function to say the check engine light is on with a conditional to check the needs maintenance attribute and prints whether the light is on or off*/
+
+function Car(make, model, color) {
+	console.log("Our new car" + this);
+	this.make = make;
 }
