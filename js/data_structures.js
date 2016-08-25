@@ -44,5 +44,22 @@ and a function to say the check engine light is on with a conditional to check t
 
 function Car(make, model, color) {
 	console.log("Our new car" + this);
+	
 	this.make = make;
+	this.model = model;
+	this.color = color;
+	this.maintenance = true;
+
+	this.accelerate = function() { console.log("VROOOOM!!!"); };
+
+	this.check_engine_light = function() {
+		if (this.maintenance) {
+			console.log("The check engine light is on.");
+		} else {
+			console.log("The check engine light is off.");
+		}
+	}
+
+	console.log("CAR INITIALIZATION COMPLETE");
 }
+
