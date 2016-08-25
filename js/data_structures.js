@@ -81,3 +81,12 @@ another_car.accelerate();
 another_car.check_engine_light();
 another_car.maintenance = false;
 another_car.check_engine_light();
+
+console.log(another_car.length);
+
+// Test to loop through keys and values
+// for (var whatever_I_want in car) {
+// 	if (car.hasOwnProperty(whatever_I_want)) {
+// 		console.log(whatever_I_want + " -> " + car[whatever_I_want]);
+// 	}
+// }
