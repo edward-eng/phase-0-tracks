@@ -91,7 +91,7 @@ california = VirusPredictor.new("California", STATE_DATA["California"][:populati
 california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-p alaska
+# p alaska
 alaska.virus_effects
 
 # Loop through the state data hash to access each state
@@ -103,7 +103,7 @@ STATE_DATA.each do |state, state_info|
   temp_state.virus_effects
 end
 
-puts STATE_DATA.length
+# puts STATE_DATA.length
 
 # STATE_DATA.each do |state|
 #  state.each do |population_density, population|
