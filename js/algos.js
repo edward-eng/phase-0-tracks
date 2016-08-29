@@ -1,5 +1,21 @@
 // Pseudocode (longest_string function)
 // Add a longest_string function.
 // The function takes in an array (of words or phrases) as a parameter.
-// Then the function iterates through the array to find the longest word or phrase.
-// Then the function returns that word or phrase.
+// Then the function iterates through the array to see how long each string is.
+// Then function should return the longest string in the array.
+
+function longest_string(array){
+	var longest_string_found = ""
+	for (var i = 0; i < array.length; i++){
+		// If the length of the current element in the array is longer than the length of the longest_string_found variable:
+		// Store the current element in the longest_string_found variable.
+		// Return the longest_string_found.
+		if (array[i].length > longest_string_found.length){
+			longest_string_found = array[i]
+		}
+	}
+	return longest_string_found
+}
+
+var result = longest_string(['cat', 'dinosaur', 'mouse']);
+console.log(result)
