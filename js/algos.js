@@ -50,6 +50,14 @@ function key_value_match(object1, object2){
 	}
 }
 
+// Pseudocode (random_test_data function)
+
+// Add random_test_data function.
+// The function should take an integer to determine the length an of array.
+// Then the function should build an array.
+// Then the function should populate the array with random strings until the number of strings equals the integer given.
+// The random strings should contain at least 1 letter but not more than 10.
+
 // Driver Code
 var match_result = key_value_match({name: "Steven", age: 54}, {name: "Tamir", age: 54})
 console.log(match_result)
