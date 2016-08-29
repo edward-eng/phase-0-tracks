@@ -50,6 +50,14 @@ function key_value_match(object1, object2){
 	}
 }
 
+// Driver Code
+var match_result = key_value_match({name: "Steven", age: 54}, {name: "Tamir", age: 54})
+console.log(match_result)
+
+// Not sure why this still returns <true>.
+var match_result = key_value_match({name: "Steven", age: 54}, {name: "Tamir", age: 14})
+console.log(match_result)
+
 // Pseudocode (random_test_data function)
 
 // Add random_test_data function.
@@ -58,10 +66,9 @@ function key_value_match(object1, object2){
 // Then the function should populate the array with random strings until the number of strings equals the integer given.
 // The random strings should contain at least 1 letter but not more than 10.
 
-// Driver Code
-var match_result = key_value_match({name: "Steven", age: 54}, {name: "Tamir", age: 54})
-console.log(match_result)
+function random_test_data(array_length){
+	empty_array = []
 
-// Not sure why this still returns <true>.
-var match_result = key_value_match({name: "Steven", age: 54}, {name: "Tamir", age: 14})
-console.log(match_result)
+}
+
+random_test_data(3)
