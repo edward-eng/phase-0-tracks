@@ -25,8 +25,35 @@ console.log(result)
 
 // Add key_value_match function.
 // The function takes in two objects.
-// The function iterates through the hash to look at the keys and values of each object.
+// The function iterates through each object to look at the keys and values.
 // If the keys or the values of both objects match:
 // The function should return <true>.
 // Otherwise (else), the function should return <false>.
 
+function key_value_match(object1, object2){
+	var match = false;
+	for (var info1 in object1){
+		if (object1.hasOwnProperty(info1)){
+			console.log(info1 + ": " + object1[info1]);
+		}
+	}
+	for (var info2 in object2){
+		if (object2.hasOwnProperty(info2)){
+			console.log(info2 + ": " + object2[info2]);
+		}
+	}
+	if (object1.hasOwnProperty(info1) == object2.hasOwnProperty(info2)){
+		return match = true;
+	}
+	else {
+		return match = false;
+	}
+}
+
+// Driver Code
+var match_result = key_value_match({name: "Steven", age: 54}, {name: "Tamir", age: 54})
+console.log(match_result)
+
+// Not sure why this still returns <true>.
+var match_result = key_value_match({name: "Steven", age: 54}, {name: "Tamir", age: 14})
+console.log(match_result)
