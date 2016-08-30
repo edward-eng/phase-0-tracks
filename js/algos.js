@@ -63,12 +63,27 @@ console.log(match_result)
 // Add random_test_data function.
 // The function should take an integer to determine the length an of array.
 // Then the function should build an array.
-// Then the function should populate the array with random strings until the number of strings equals the integer given.
+// Then the function should populate the array with random strings until the number of strings equals the integer given (random_string()).
 // The random strings should contain at least 1 letter but not more than 10.
 
 function random_test_data(array_length){
 	empty_array = []
-
+	for (var i = 0; i < array_length; i++){
+		empty_array.push('a');
+	}
+	return(empty_array);
 }
 
 random_test_data(3)
+console.log(random_test_data(3))
+
+// Pseudocode (random_string function)
+
+// Add random_string function.
+// The function should determine how long the random string should be by randomly choosing a number from 1 through 10.
+// Then the function should look through the alphabet and randomly choose letters until the number of letters equals the number chosen.
+
+function random_string {
+	var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+}
