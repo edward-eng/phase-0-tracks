@@ -13,13 +13,16 @@ name = gets.chomp
 puts "What's your client's age?"
 age = gets.chomp.to_i
 
+puts "How many children does your client have?"
+children = gets.chomp.to_i
+
 puts "What decor theme has your client chosen?"
 decor_theme = gets.chomp
 
 puts "Does your client live in the city?"
 residence = gets.chomp
 
-client_info = {name: name, age: age, decor: decor_theme, city: residence}
+client_info = {name: name, age: age, children: children, decor: decor_theme, city: residence}
 p client_info
 
 # Ask user what changes he or she wants to make. (key or none)
@@ -33,13 +36,15 @@ p client_info
 # - Reassign new_value to hash.
 # Print result.
 
-puts "What would you like to change? (name, age, decor, city, or none)"
+puts "What would you like to change? (name, age, children, decor, city, or none)"
 user_response = gets.chomp
 
 if user_response != "none"
 	user_response = user_response.to_sym
 	puts "What would you like to change?"
 	if user_response == :age
+		new_value = gets.chomp.to_i
+	elsif user_response == :children
 		new_value = gets.chomp.to_i
 	else
 		new_value = gets.chomp
