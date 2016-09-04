@@ -25,4 +25,4 @@ mtg_bookbag = {
 
 p mtg_bookbag[:deckbox][:deck_name]
 p mtg_bookbag[:battle_gear][3]
-# p mtg_bookbag[:contents][:blue_cards]
+p mtg_bookbag[:binder][:contents][:power_trades].push('Chalice of the Void')
