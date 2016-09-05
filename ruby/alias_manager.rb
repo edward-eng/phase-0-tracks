@@ -33,8 +33,6 @@ def fake_name(real_name)
 
 	consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
 
-	final_names = []
-
 		swap_name = real_name.reverse
 		join_name = swap_name.join(' ')
 		join_name = join_name.downcase
@@ -59,8 +57,8 @@ def fake_name(real_name)
 			end
 		end
 		result = split_name.join('')
-		final_names.push(result)
-		puts "#{real_name} is #{final_names}."
+		join_real_name = real_name.join(' ')
+		puts "#{join_real_name} is #{result}."
 end
 
 fake_name(["#{first_name}", "#{last_name}"])
@@ -96,7 +94,6 @@ last_name = gets.chomp
 
 # Add the first and last name variables together with a space between them and store the result in another variable called <full_name>.
 full_name = "#{[first_name, last_name].join(' ')}"
-p full_name
 
 # Break the <full_name> up into two strings and store the result in an array. Then store the array in a new variable called <split_name>.
 split_name = full_name.split
@@ -140,9 +137,9 @@ split_new_string_name.map! do |letters|
 end
 
 # Print the result to the console.
-p split_new_string_name
+# p split_new_string_name
 fake_name = split_new_string_name.join('')
-p fake_name
+# p fake_name
 
 puts "#{full_name} is also known as #{fake_name}."
 
