@@ -1,3 +1,76 @@
+# New Work
+
+# Write a method that takes a real name (first and last names).
+# Then swap the first and last names.
+# Then split up all the letters of the first and last names.
+# Then store each one of those lettters in an array.
+# Then change all the vowels to the next vowel.
+# If the vowel is a 'u', then change it to an 'a'.
+# Then change all the consonants to the next consonant.
+# If the consonant is a 'z', then change it to an 'a'.
+
+# User Interface
+loop do
+	puts "Do you want to scramble a name? (yes or 'q' for quit)"
+	input = gets.chomp
+	break if input == 'q'
+
+# Ask the user for his or her first name.
+puts "Please enter first name:"
+
+# Get the response and store it in a variable called <first_name>.
+first_name = gets.chomp
+
+# Ask the user for his or her last name.
+puts "Please enter last name:"
+
+# Get the response and store it in a variable called <last_name>.
+last_name = gets.chomp
+
+def fake_name(real_name)
+
+	vowels = ['a', 'e', 'i', 'o', 'u']
+
+	consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+
+	final_names = []
+
+		swap_name = real_name.reverse
+		join_name = swap_name.join(' ')
+		join_name = join_name.downcase
+		split_name = join_name.split('')
+		split_name.map! do |letter|
+			if vowels.include?(letter)
+				if letter == "u"
+					letter = "a"
+				else
+					vowels.index(letter)
+					vowels[vowels.index(letter) + 1]
+				end
+			elsif consonants.include?(letter)
+				if letter == "z"
+						letter = "a"
+				else
+						consonants.index(letter)
+						consonants[consonants.index(letter) + 1]
+				end
+			else
+				letter
+			end
+		end
+		result = split_name.join('')
+		final_names.push(result)
+		puts "#{real_name} is #{final_names}."
+end
+
+fake_name(["#{first_name}", "#{last_name}"])
+
+end
+
+# ================================================
+
+# Old Work
+
 # Fake Name Generator
 
 # User Interface
