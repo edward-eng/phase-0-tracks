@@ -11,11 +11,16 @@ class Puppy
     puts "Woof! " * integer
   end
 
+  def roll_over
+    puts "*rolls over*"
+  end
+
 end
 
 chihuahua = Puppy.new
 chihuahua.fetch('ball')
 chihuahua.speak(5)
+chihuahua.roll_over
 
 # ========================================
 
