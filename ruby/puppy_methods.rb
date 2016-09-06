@@ -15,12 +15,17 @@ class Puppy
     puts "*rolls over*"
   end
 
+  def dog_years(human_years)
+    human_years * 7
+  end
+
 end
 
 chihuahua = Puppy.new
 chihuahua.fetch('ball')
 chihuahua.speak(5)
 chihuahua.roll_over
+chihuahua.dog_years(4)
 
 # ========================================
 
