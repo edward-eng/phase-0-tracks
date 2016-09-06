@@ -1,3 +1,5 @@
+# New Stuff
+
 class Puppy
 
   def fetch(toy)
@@ -5,72 +7,93 @@ class Puppy
     toy
   end
 
-  def speak(int)
-  	int.times do |word| 
-  	puts "Woof! "
-  	end
-  end
-
-  def roll_over(string)
-  	puts string
-  end
-
-  def dog_years(int)
-  	puts int * 7
-  end
-
-  def tail_wag(int)
-  	puts "I wagged my tail #{int} times today!"
-  end
-
-  def initialize
-  	puts "Initializing new puppy instance ..."
+  def speak(integer)
+    puts "Woof! " * integer
   end
 
 end
 
-lab = Puppy.new
+chihuahua = Puppy.new
+chihuahua.fetch('ball')
+chihuahua.speak(5)
 
-lab.fetch("ball")
-lab.speak(4)
-lab.roll_over("*rolls over*")
-lab.dog_years(1)
-lab.tail_wag(50)
+# ========================================
 
-class Fruits
+# Old Stuff
 
-	def skin_color(int)
-		puts "I changed my skin color #{int} times before I was picked!!!"
-	end
+# class Puppy
 
-	def initialize
-  	puts "Initializing new fruits instance ..."
-  	end
+#   def fetch(toy)
+#     puts "I brought back the #{toy}!"
+#     toy
+#   end
 
-	def food(string)
-		puts "I am turned into a #{string}!"
-	end	
+#   def speak(int)
+#   	int.times do |word| 
+#   	puts "Woof! "
+#   	end
+#   end
 
-end
+#   def roll_over(string)
+#   	puts string
+#   end
 
-blueberry = Fruits.new
+#   def dog_years(int)
+#   	puts int * 7
+#   end
 
-blueberry.skin_color(3)
-blueberry.food("pancakes")
+#   def tail_wag(int)
+#   	puts "I wagged my tail #{int} times today!"
+#   end
 
-empty_array = []
+#   def initialize
+#   	puts "Initializing new puppy instance ..."
+#   end
 
-i = 0
+# end
 
-until i == 50
-  blueberry = Fruits.new
-  empty_array << blueberry
-  i += 1
-end
+# lab = Puppy.new
 
-p empty_array
+# lab.fetch("ball")
+# lab.speak(4)
+# lab.roll_over("*rolls over*")
+# lab.dog_years(1)
+# lab.tail_wag(50)
 
-empty_array.each do |item|
-  blueberry.skin_color(3)
-  blueberry.food("pancakes")
-end
+# class Fruits
+
+# 	def skin_color(int)
+# 		puts "I changed my skin color #{int} times before I was picked!!!"
+# 	end
+
+# 	def initialize
+#   	puts "Initializing new fruits instance ..."
+#   	end
+
+# 	def food(string)
+# 		puts "I am turned into a #{string}!"
+# 	end	
+
+# end
+
+# blueberry = Fruits.new
+
+# blueberry.skin_color(3)
+# blueberry.food("pancakes")
+
+# empty_array = []
+
+# i = 0
+
+# until i == 50
+#   blueberry = Fruits.new
+#   empty_array << blueberry
+#   i += 1
+# end
+
+# p empty_array
+
+# empty_array.each do |item|
+#   blueberry.skin_color(3)
+#   blueberry.food("pancakes")
+# end
