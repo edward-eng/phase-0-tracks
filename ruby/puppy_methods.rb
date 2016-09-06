@@ -36,6 +36,27 @@ chihuahua.roll_over
 chihuahua.dog_years(4)
 chihuahua.sleep(15)
 
+
+class Fish
+
+  def initialize
+    puts "Initializing new fish instance...."
+  end
+
+  def swim(laps)
+    puts "I swim #{laps} laps a day."
+  end
+
+  def eat(food)
+    puts "My favorite food is #{food}."
+  end
+end
+
+
+#Driver Code:
+nemo = Fish.new
+nemo.swim(8)
+nemo.eat('anchovies')
 # ========================================
 
 # Old Stuff
