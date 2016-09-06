@@ -19,6 +19,10 @@ class Puppy
     human_years * 7
   end
 
+  def sleep(hours)
+    puts "I slept for #{hours} hours!"
+  end
+
 end
 
 chihuahua = Puppy.new
@@ -26,6 +30,7 @@ chihuahua.fetch('ball')
 chihuahua.speak(5)
 chihuahua.roll_over
 chihuahua.dog_years(4)
+chihuahua.sleep(15)
 
 # ========================================
 
