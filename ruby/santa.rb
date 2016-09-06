@@ -36,7 +36,12 @@ end
 
 # p santas
 
+puts "How many santas do you want to make?"
+input = gets.chomp.to_i
 
+binary_genders = ['male', 'female']
+
+ethnicities = ['White', 'Black', 'Asian', 'Middle Easter', 'Latino']
 
 # ==============================
 
