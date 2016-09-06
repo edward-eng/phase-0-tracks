@@ -1,7 +1,7 @@
 # 6.1 Introduction to Classes
 
 # SPECIES ------------------------
-# Super Puppy
+# Barkous Aurelious
 
 # CHARACTERISTICS ----------------
 # Eyelash length: varies
