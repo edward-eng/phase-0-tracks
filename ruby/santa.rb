@@ -1,6 +1,6 @@
 class Santa
-	attr_reader :age, :ethnicity
-	attr_accessor :gender
+	attr_reader :ethnicity
+	attr_accessor :gender, :age
 
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance ..."
@@ -27,6 +27,12 @@ class Santa
 		bad_reindeer = @reindeer_ranking.delete(reindeer_name)
 		@reindeer_ranking << bad_reindeer
 		@reindeer_ranking
+	end
+
+	def about
+		puts "Gender: #{@gender}"
+		puts "Ethnicity: #{@ethnicity}"
+		puts "Age: #{@age}"
 	end
 
 	# Getter Methods
@@ -93,12 +99,29 @@ end
 
 # ==============================
 # Release 2
-santa = Santa.new("male", "white")
-p santa.celebrate_birthday
-p santa.get_mad_at("Vixen")
-santa.gender = "alienistic"
-puts "This santa's gender is #{santa.gender}."
-p santa
+# santa = Santa.new("male", "white")
+# p santa.celebrate_birthday
+# p santa.get_mad_at("Vixen")
+# santa.gender = "alienistic"
+# puts "This santa's gender is #{santa.gender}."
+# p santa
+
+# ==============================
+# Release 4
+puts "How many santas would you like to make?"
+input = gets.chomp.to_i
+
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+counter = 0
+
+until counter == input
+new_santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+new_santa.age = rand(140)
+new_santa.about
+	counter += 1
+end
 
 # ==============================
 # ==============================
