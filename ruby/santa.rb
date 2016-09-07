@@ -43,6 +43,17 @@ binary_genders = ['male', 'female']
 
 ethnicities = ['White', 'Black', 'Asian', 'Middle Easter', 'Latino']
 
+santas = []
+
+counter = 0
+
+until counter == input
+	santas << Santa.new(binary_genders.sample, ethnicities.sample)
+	counter += 1
+end
+
+p santas
+
 # ==============================
 
 # Old Work
