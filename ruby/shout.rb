@@ -1,17 +1,39 @@
+# module Shout
+#   def self.yell_angrily(words)
+#     words + "!!!" + " :("
+#   end
+
+#   def self.yelling_happily(words)
+#   	puts "#{words}! :)"
+#   end
+# end
+
+# Shout.yell_angrily('WTF')
+# Shout.yelling_happily('Yeehaw')
+
 module Shout
-  def self.yell_angrily(words)
-    words + "!!!" + " :("
+  def yell_angrily(words)
+    words + "!!!"
   end
 
-  def self.yelling_happily(words)
+  def yelling_happily(words)
   	puts "#{words}! :)"
   end
 end
 
-Shout.yell_angrily('WTF')
-Shout.yelling_happily('Yeehaw')
+class Lhurgoyf
+	include Shout
+end
 
+class Goblin
+	include Shout
+end
 
+tarmogoyf = Lhurgoyf.new
+p tarmogoyf.yell_angrily('Food')
+
+goblin_guide = Goblin.new
+goblin_guide.yelling_happily('Attack')
 
 # ==============================
 # ==============================
