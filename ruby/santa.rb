@@ -15,15 +15,48 @@ class Santa
 	def eat_milk_and_cookies(cookie_type)
 		puts "That was a good #{cookie_type} cookie!"
 	end
+
+	def celebrate_birthday
+		@age += 1
+		@age
+	end
+
+	def get_mad_at(reindeer_name)
+		bad_reindeer = @reindeer_ranking.delete(reindeer_name)
+		@reindeer_ranking << bad_reindeer
+		@reindeer_ranking
+	end
+
+	# Getter Methods
+	def age
+		@age
+	end
+
+	def ethnicity
+		@ethnicity
+	end
+
+	def gender
+		@gender
+	end
+
+	# Setter Methods
+	def gender=(new_gender)
+		@gender = new_gender
+	end
 end
 
 # Driver Code
 
-# mister_claus = Santa.new('male', 'unknown')
+# ==============================
+# Release 0
+# mister_claus = Santa.new
 # mister_claus.speak
 # mister_claus.eat_milk_and_cookies('chocolate chip')
 # p mister_claus
 
+# ==============================
+# Release 1 - Do the Thing 1
 # santas = []
 
 # example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
@@ -36,24 +69,37 @@ end
 
 # p santas
 
-puts "How many santas do you want to make?"
-input = gets.chomp.to_i
+# ==============================
+# Release 1 - Do the Thing 2
+# puts "How many santas do you want to make?"
+# input = gets.chomp.to_i
 
-binary_genders = ['male', 'female']
+# binary_genders = ['male', 'female']
 
-ethnicities = ['White', 'Black', 'Asian', 'Middle Easter', 'Latino']
+# ethnicities = ['White', 'Black', 'Asian', 'Middle Easter', 'Latino']
 
-santas = []
+# santas = []
 
-counter = 0
+# counter = 0
 
-until counter == input
-	santas << Santa.new(binary_genders.sample, ethnicities.sample)
-	counter += 1
-end
+# until counter == input
+# 	santas << Santa.new(binary_genders.sample, ethnicities.sample)
+# 	counter += 1
+# end
 
-p santas
+# p santas
 
+# ==============================
+# Release 2
+santa = Santa.new("male", "white")
+p santa.celebrate_birthday
+p santa.get_mad_at("Vixen")
+santa.gender = "alienistic"
+puts "This santa's gender is #{santa.gender}."
+p santa
+
+# ==============================
+# ==============================
 # ==============================
 
 # Old Work
