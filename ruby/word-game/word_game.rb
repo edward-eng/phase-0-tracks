@@ -9,3 +9,12 @@
 # Write a method that shows the user what he or she has guessed so far
 # Write a method that tells the user if he or she won or lost
 
+class Word_Guesser
+	def initialize(word_to_guess)
+		@guess_word = word_to_guess
+	end
+
+	def key_word
+		@guess_word
+	end
+end
