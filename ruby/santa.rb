@@ -164,8 +164,10 @@ end
 # 	end
 
 # 	def get_mad_at(reindeer_name)
-# 		new_reindeer_ranking = @reindeer_ranking.rotate(1)
-# 		puts "#{name} got mad at #{reindeer_name} and the new reindeer ranking is...#{new_reindeer_ranking}"
+		# @reindeer_ranking.rotate(@reindeer_ranking.index(reindeer_name) + 1)
+
+		# # new_reindeer_ranking = @reindeer_ranking.rotate(1)
+		# # puts "#{name} got mad at #{reindeer_name} and the new reindeer ranking is...#{new_reindeer_ranking}"
 # 	end
 # end
 
