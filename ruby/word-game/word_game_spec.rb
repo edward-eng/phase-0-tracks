@@ -23,19 +23,19 @@ describe Word_Guesser do
 		expect(game.find_index).to eq [1, 3]
 	end
 
-	it "replaces the corresponding underscore(s) of the matched letters in the hidden word" do
+	it "replaces letters with underscores if they don't match the letter inputted by User_2" do
 		expect(game.show_letter).to eq "_a_a____"
 	end
 
-	it "calculates how many guesses User_2 has left" do
-		expect(game.guesses_left).to eq 15
-	end
+	# it "calculates how many guesses User_2 has left" do
+	# 	expect(game.guesses_left).to eq 15
+	# end
 
-	it "determines if User_2 wins the game" do
-		expect(game.win).to eq "kaladesh"
-	end
+	# it "determines if User_2 wins the game" do
+	# 	expect(game.win).to eq "kaladesh"
+	# end
 
-	it "determins if User_2 loses the game" do
-		expect(game.lose).to eq "kala___h"
-	end
+	# it "determines if User_2 loses the game" do
+	# 	expect(game.lose).to eq "kala___h"
+	# end
 end

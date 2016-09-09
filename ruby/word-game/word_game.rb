@@ -46,30 +46,40 @@ class Word_Guesser
 	end
 
 	def show_letter
-		p hidden_word_array = hidden_word.split('')
-		hidden_word_array.map! do |underscore|
-			if underscore == find_index
-				underscore[underscore] = @letter
+		reveal_letter = @guess_word.split('')
+		reveal_letter.map! do |letter_string|
+			if letter_string != @letter
+				"_"
+			else
+				@letter
 			end
+			reveal_letter
 		end
-		p hidden_word_array
+
+		# p hidden_word_array = hidden_word.split('')
+		# hidden_word_array.map! do |underscore_string|
+		# 	if underscore_string == find_index
+		# 		underscore[underscore] = @letter
+		# 	end
+		# end
+		# p hidden_word_array
 	end
 
-	def guesses_left
-		guesses_allowed_counter - 1
-	end
+	# def guesses_left
+	# 	guesses_allowed_counter - 1
+	# end
 
-	def win
-		if show_letter.length < guesses_left
-			"kaladesh"
-		end
-	end
+	# def win
+	# 	if show_letter.length < guesses_left
+	# 		"kaladesh"
+	# 	end
+	# end
 
-	def lose
-		if guesses_left = 0
-			"kala___h"
-		end
-	end
+	# def lose
+	# 	if guesses_left = 0
+	# 		"kala___h"
+	# 	end
+	# end
 end
 
 # Driver Code
