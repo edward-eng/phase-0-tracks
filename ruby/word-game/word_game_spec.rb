@@ -12,7 +12,7 @@ describe Word_Guesser do
 	end
 
 	it "stores the letter User_2 inputted" do
-		expect(game.store_letter).to eq "a"
+		expect(game.store_letter).to eq ["a"]
 	end
 
 	it "determines a number of underscores based on the length of the word User_1 inputted" do

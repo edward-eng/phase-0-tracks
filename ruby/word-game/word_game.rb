@@ -32,7 +32,9 @@ class Word_Guesser
 	end
 
 	def store_letter
-		@letter
+		letters_guessed = []
+		letters_guessed << @letter
+		letters_guessed
 	end
 
 	def hidden_word
@@ -81,7 +83,25 @@ class Word_Guesser
 	end
 end
 
-# Driver Code
+# USER INTERFACE
+# puts "It's Word Guesser time!!!"
+
+# puts "Player 1, please enter a word to guess:"
+# word = gets.chomp
+
+# puts "Alright Player 2, it's your turn. Please enter a letter:"
+# letter = gets.chomp
+# game = Word_Guesser.new(word, letter)
+
+# puts "Okay Player 2, here's your result:"
+# puts "#{game.show_letter}"
+# puts "You've got #{game.guesses_left} guesses left to win the game. Good Luck!"
+# puts "Please enter another letter:"
+# letter = gets.chomp
+
+
+
+# DRIVER CODE
 # word = Word_Guesser.new('kaladesh', 'a')
 # p word.key_word
 # p word.guesses_allowed_counter
