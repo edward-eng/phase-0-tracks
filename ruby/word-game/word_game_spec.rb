@@ -31,6 +31,10 @@ describe Word_Guesser do
 		expect(game.guesses_left).to eq 15
 	end
 
+	it "checks if the letter User_2 inputted has already been guessed" do
+		expect(game.duplicate_letter("a")).to eq 15
+	end
+
 	it "determines if User_2 wins the game" do
 		expect(game.win).to eq "kaladesh"
 	end

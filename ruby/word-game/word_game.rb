@@ -11,6 +11,7 @@
 # Ask User_2 to type in a letter (implement in the user interface)
 # If the letter is in the word, replace the underscore with that letter
 # Show User_2 an updated version of the hidden word (implement in the user interface)
+# If User_2 types in a letter he or she already typed in before, disgread this guess and makes sure it doesn't deduct from the number of guesses User_2 has left
 # Let User_2 know how many guesses he or she has left (implement in the user interface)
 # If User_2 guesses all the letters correctly before he or she runs out of guesses, print a message showing the correctly guessed word and 'you win!' (implement in the user interface)
 # Otherwise, print a message showing User_2 the word he or she guessed and 'you fail!' when User_2 runs out of guesses (implement in the user interface)
@@ -59,6 +60,12 @@ class Word_Guesser
 
 	def guesses_left
 		guesses_allowed_counter - 1
+	end
+
+	def duplicate_letter(letter)
+		if letter == @letter
+			guesses_left
+		end 
 	end
 
 	def win
