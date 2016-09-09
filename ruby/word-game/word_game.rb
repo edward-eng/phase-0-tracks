@@ -48,38 +48,30 @@ class Word_Guesser
 	def show_letter
 		reveal_letter = @guess_word.split('')
 		reveal_letter.map! do |letter_string|
-			if letter_string != @letter
-				"_"
-			else
+			if letter_string == @letter
 				@letter
+			else
+				"_"
 			end
-			reveal_letter
 		end
-
-		# p hidden_word_array = hidden_word.split('')
-		# hidden_word_array.map! do |underscore_string|
-		# 	if underscore_string == find_index
-		# 		underscore[underscore] = @letter
-		# 	end
-		# end
-		# p hidden_word_array
+		reveal_letter.join('')
 	end
 
-	# def guesses_left
-	# 	guesses_allowed_counter - 1
-	# end
+	def guesses_left
+		guesses_allowed_counter - 1
+	end
 
-	# def win
-	# 	if show_letter.length < guesses_left
-	# 		"kaladesh"
-	# 	end
-	# end
+	def win
+		if show_letter.length < guesses_left
+			"kaladesh"
+		end
+	end
 
-	# def lose
-	# 	if guesses_left = 0
-	# 		"kala___h"
-	# 	end
-	# end
+	def lose
+		if guesses_left = 0
+			"kala___h"
+		end
+	end
 end
 
 # Driver Code

@@ -27,15 +27,15 @@ describe Word_Guesser do
 		expect(game.show_letter).to eq "_a_a____"
 	end
 
-	# it "calculates how many guesses User_2 has left" do
-	# 	expect(game.guesses_left).to eq 15
-	# end
+	it "calculates how many guesses User_2 has left" do
+		expect(game.guesses_left).to eq 15
+	end
 
-	# it "determines if User_2 wins the game" do
-	# 	expect(game.win).to eq "kaladesh"
-	# end
+	it "determines if User_2 wins the game" do
+		expect(game.win).to eq "kaladesh"
+	end
 
-	# it "determines if User_2 loses the game" do
-	# 	expect(game.lose).to eq "kala___h"
-	# end
+	it "determines if User_2 loses the game" do
+		expect(game.lose).to eq "kala___h"
+	end
 end
