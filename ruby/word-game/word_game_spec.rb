@@ -36,10 +36,10 @@ describe Word_Guesser do
 	end
 
 	it "determines if User_2 wins the game" do
-		expect(game.win).to eq "kaladesh"
+		expect(game.win).to eq "You correctly guessed kaladesh. You win!"
 	end
 
 	it "determines if User_2 loses the game" do
-		expect(game.lose).to eq "kala___h"
+		expect(game.lose).to eq "You guessed _a_a____ and are out of guesses. Sorry, you lose! =("
 	end
 end

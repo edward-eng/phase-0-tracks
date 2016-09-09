@@ -4,22 +4,25 @@
 # User_2 Input: a letter
 # Output: A message telling User_2 what the correctly guessed word is and a message saying 'you won!' OR a message telling User_2 what he or she guessed and a message saying 'you fail!'
 
-# Make a game class (completed)
-# Ask User_1 to type in a word (implement in the user interface)
-# Let User_2 know that he or she has a number of guesses that's equal to twice the length of the word (implement in the user interface)
-# Show User_2 a hidden word with underscores each representing a letter in the word and a space between each underscore (implement in the user interface)
-# Ask User_2 to type in a letter (implement in the user interface)
+# Make a game class
+# Ask User_1 to type in a word
+# Let User_2 know that he or she has a number of guesses that's equal to twice the length of the word
+# Show User_2 a hidden word with underscores each representing a letter in the word and a space between each underscore
+# Ask User_2 to type in a letter
 # If the letter is in the word, replace the underscore with that letter
-# Show User_2 an updated version of the hidden word (implement in the user interface)
+# Show User_2 an updated version of the hidden word
 # If User_2 types in a letter he or she already typed in before, disgread this guess and makes sure it doesn't deduct from the number of guesses User_2 has left
-# Let User_2 know how many guesses he or she has left (implement in the user interface)
-# If User_2 guesses all the letters correctly before he or she runs out of guesses, print a message showing the correctly guessed word and 'you win!' (implement in the user interface)
-# Otherwise, print a message showing User_2 the word he or she guessed and 'you fail!' when User_2 runs out of guesses (implement in the user interface)
+# Let User_2 know how many guesses he or she has left
+# If User_2 guesses all the letters correctly before he or she runs out of guesses, print a message showing the correctly guessed word and 'you win!'
+# Otherwise, print a message showing User_2 the word he or she guessed and 'you fail!' when User_2 runs out of guesses
 
 class Word_Guesser
+	attr_reader :is_over
+
 	def initialize(inputted_word, inputted_letter)
 		@guess_word = inputted_word
 		@letter = inputted_letter
+		@is_over = false
 	end
 
 	def key_word
@@ -65,39 +68,35 @@ class Word_Guesser
 	end
 
 	def duplicate_letter(letter)
-		if letter == @letter
+		if store_letter.include?(letter)
 			guesses_left
 		end 
 	end
 
 	def win
-		if show_letter.length < guesses_left
-			"kaladesh"
+		if (guesses_allowed_counter > 0) && (!show_letter.include?("_"))
 		end
+		"You correctly guessed #{@guess_word}. You win!"
 	end
 
 	def lose
-		if guesses_left = 0
-			"kala___h"
+		if (guesses_left = 0) && (show_letter.include?("_"))
 		end
+		"You guessed #{show_letter} and are out of guesses. Sorry, you lose! =("
 	end
 end
 
 # USER INTERFACE
-# puts "It's Word Guesser time!!!"
+puts "It's Word Guesser time!!!"
 
-# puts "Player 1, please enter a word to guess:"
-# word = gets.chomp
+puts "Player 1, please enter a word to guess:"
+word = gets.chomp
 
-# puts "Alright Player 2, it's your turn. Please enter a letter:"
-# letter = gets.chomp
-# game = Word_Guesser.new(word, letter)
+puts "Alright Player 2, it's your turn. Please enter a letter:"
+letter = gets.chomp
+game = Word_Guesser.new(word, letter)
 
-# puts "Okay Player 2, here's your result:"
-# puts "#{game.show_letter}"
-# puts "You've got #{game.guesses_left} guesses left to win the game. Good Luck!"
-# puts "Please enter another letter:"
-# letter = gets.chomp
+
 
 
 
