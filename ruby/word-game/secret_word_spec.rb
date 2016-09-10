@@ -10,4 +10,8 @@ describe Word_Game do
 	it "stores letters that player 2 inputs" do
 		expect(game.store_guessed_letters('a')).to eq ['a']
 	end
+
+	it "limits the number of guesses player 2 has" do
+		expect(game.limit_guesses).to eq 16
+	end
 end

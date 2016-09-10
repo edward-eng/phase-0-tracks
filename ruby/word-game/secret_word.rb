@@ -35,6 +35,10 @@ class Word_Game
 		guessed_letters = []
 		guessed_letters << guessed_letter
 	end
+
+	def limit_guesses
+		@secret_word.length * 2
+	end
 end
 
 
