@@ -1,8 +1,7 @@
 # Pseudocode
 
 # create a game class
-# define a method that initiates an instance of the game class
-# define a method that stores a secret word that player 1 inputs
+# define a method that stores a secret word that player 1 inputs when the game is initialized
 	# this method should store the word as an array of strings
 	# each string should represent one letter of the word
 # define a method that stores a letter that player 2 inputs
@@ -22,3 +21,22 @@
 # define a method that lets player 2 know he or she lost the game
 	# the method should show the incomplete word player 2 guessed
 	# the method should also show a message saying ‘you lose!’
+
+class Word_Game
+	def initialize(secret_word)
+		@secret_word = secret_word
+	end
+
+	def store_secret_word
+		@secret_word.split('')
+	end
+end
+
+
+
+
+
+
+
+
+
