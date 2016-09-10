@@ -14,4 +14,8 @@ describe Word_Game do
 	it "limits the number of guesses player 2 has" do
 		expect(game.limit_guesses).to eq 16
 	end
+
+	it "checks the letter player enters" do
+		expect(game.check_letter).to eq 15
+	end
 end

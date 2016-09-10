@@ -8,7 +8,7 @@
 	# this method should store the letter as a string in an array
 # define a method that limits the guesses player 2 has
 	# the number of guesses is equal to twice the length of the word given by player 1
-# define a method that checks each letter player 2 enters
+# define a method that checks the letter player 2 enters
 	# if the letter hasn’t been guessed, the method reduces the guesses player 2 has by 1
 	# otherwise, the number of guesses isn’t reduced
 # define a method that shows the current state of the word given by player 1
@@ -23,8 +23,11 @@
 	# the method should also show a message saying ‘you lose!’
 
 class Word_Game
+	attr_accessor :guessed_letter
+
 	def initialize(secret_word)
 		@secret_word = secret_word
+		@guessed_letter = ""
 	end
 
 	def store_secret_word
@@ -32,12 +35,21 @@ class Word_Game
 	end
 
 	def store_guessed_letters(guessed_letter)
+		@guessed_letter = guessed_letter
 		guessed_letters = []
-		guessed_letters << guessed_letter
+		guessed_letters << @guessed_letter
 	end
 
 	def limit_guesses
 		@secret_word.length * 2
+	end
+
+	def check_letter
+		if !store_guessed_letters.include?(@guessed_letter)
+			limit_guesses - 1
+		else
+			limit_guesses
+		end
 	end
 end
 
