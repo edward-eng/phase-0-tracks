@@ -4,7 +4,7 @@
 # define a method that stores a secret word that player 1 inputs when the game is initialized
 	# this method should store the word as an array of strings
 	# each string should represent one letter of the word
-# define a method that stores a letter that player 2 inputs
+# define a method that stores letters that player 2 inputs
 	# this method should store the letter as a string in an array
 # define a method that limits the guesses player 2 has
 	# the number of guesses is equal to twice the length of the word given by player 1
@@ -29,6 +29,11 @@ class Word_Game
 
 	def store_secret_word
 		@secret_word.split('')
+	end
+
+	def store_guessed_letters(guessed_letter)
+		guessed_letters = []
+		guessed_letters << guessed_letter
 	end
 end
 
