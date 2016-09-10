@@ -67,4 +67,4 @@ end
 # p game.store_guessed_letters('a')
 # p game.limit_guesses
 # p game.repeat_letter
-p game.current_word_state
+# p game.current_word_state
