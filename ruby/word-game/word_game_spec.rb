@@ -4,7 +4,7 @@ describe Word_Guesser do
 	let(:game) { Word_Guesser.new("kaladesh", "a") }
 
 	it "stores the word User_1 inputted upon initialization" do
-		expect(game.key_word).to eq "kaladesh"
+		expect(game.key_word).to eq ["k", "a", "l", "a", "d", "e", "s", "h"]
 	end
 
 	it "keeps track of how many guesses User_2 has left" do

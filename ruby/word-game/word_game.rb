@@ -26,7 +26,7 @@ class Word_Guesser
 	end
 
 	def key_word
-		@guess_word
+		@guess_word.split('')
 	end
 
 	def guesses_allowed_counter
@@ -87,16 +87,36 @@ class Word_Guesser
 end
 
 # USER INTERFACE
+
+# introduce the game
 puts "It's Word Guesser time!!!"
 
+# ask player 1 for a word
 puts "Player 1, please enter a word to guess:"
 word = gets.chomp
 
+# ask player 2 for a letter
 puts "Alright Player 2, it's your turn. Please enter a letter:"
 letter = gets.chomp
 game = Word_Guesser.new(word, letter)
 
+# show player 2 a string of letters and underscores
+# it should be the length of the word player 1 gave
+# it should show any matches of the letter player 2 gave
+puts "Your result is: #{game.show_letter}"
 
+# show player 2 how many guesses he or she has left
+puts "You have #{game.guesses_left} guesses left."
+
+# ask player 2 for another letter
+# add this letter to list of letters he or she has guessed
+# check the word player 1 gave to see if it has this letter player 2 gave
+# if its in the the word, reveal the letter
+# show player 2 an updated string with all the correctly guessed letters so far and underscores for all the letters that haven't been guessed yet
+# the string should show any correctly guessed letters from before and any matches of the letter player 2 gave this time
+puts "Please enter another letter:"
+next_letter = gets.chomp
+game.store_letter << next_letter
 
 
 
