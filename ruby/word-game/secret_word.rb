@@ -12,7 +12,7 @@
 	# if the letter hasn’t been guessed, the method reduces the guesses player 2 has by 1
 	# otherwise, the number of guesses isn’t reduced
 # define a method that shows the current state of the word given by player 1
-	# the method should start out by showing a string of underscores
+	# the method should start out by showing a string of underscores equal to the number of letters in the word
 	# each underscore represents a letter in the word
 	# the method should reveal all letters correctly guessed by player 2
 # define a method that lets player 2 know he or she won the game
@@ -38,6 +38,7 @@ class Word_Game
 		@guessed_letter = guessed_letter
 		guessed_letters = []
 		guessed_letters << @guessed_letter
+		guessed_letters
 	end
 
 	def limit_guesses
@@ -45,7 +46,7 @@ class Word_Game
 	end
 
 	def check_letter
-		if !store_guessed_letters.include?(@guessed_letter)
+		if store_guessed_letters(guessed_letter).include?(@guessed_letter) == true
 			limit_guesses - 1
 		else
 			limit_guesses

@@ -18,4 +18,8 @@ describe Word_Game do
 	it "checks the letter player enters" do
 		expect(game.check_letter).to eq 15
 	end
+
+	# it "shows current state of word given by player 1" do
+	# 	expect(game.current_word_state).to eq "________"
+	# end
 end
