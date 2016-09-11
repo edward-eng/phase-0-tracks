@@ -32,12 +32,12 @@ describe Word_Game do
 	end
 
 	it "tells player 2 he or she won" do
-		expect(game.win).to eq true
-		# "You correctly guessed 'kaladesh'. You win!"
+		expect(game.win).to eq "You correctly guessed 'kaladesh'. You win!"
+		# true
 	end
 
 	it "tells player 2 he or she lost" do
-		expect(game.lose).to eq true
-		# "Sorry, you're out of guesses. You lose! =("
+		expect(game.lose).to eq "Sorry, you're out of guesses. You lose! =("
+		# true
 	end
 end

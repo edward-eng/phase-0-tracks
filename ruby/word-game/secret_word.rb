@@ -87,15 +87,15 @@ class Word_Game
 	def win
 		if (limit_guesses > 0) && (!reveal_letters(guessed_letter).include?("_"))
 		end
-		@is_over = true
-		# "You correctly guessed '#{@secret_word}'. You win!"
+		# @is_over = true
+		"You correctly guessed '#{@secret_word}'. You win!"
 	end
 
 	def lose
 		if (limit_guesses == 0) && (reveal_letters(guessed_letter).include?("_"))
 		end
-		@is_over = true
-		# "Sorry, you're out of guesses. You lose! =("
+		# @is_over = true
+		"Sorry, you're out of guesses. You lose! =("
 	end
 end
 
@@ -113,17 +113,33 @@ secret_word = gets.chomp
 game = Word_Game.new(secret_word)
 puts "Okay Player 2, the secret word #{game.current_word_state} has #{game.limit_guesses/2} letters in it. You have #{game.limit_guesses} guesses to win the game. Good luck!"
 
-while !game.is_over
-	puts "Please enter a letter:"
-	letter = gets.chomp
-	p game.reveal_letters(letter)
-	if game.win
-		puts "You correctly guessed #{secret_word}. You win!"
-	else
-		game.lose
-		"Sorry, you're out of guesses. You lose! =("
-	end
-end
+
+puts "Player 2, please enter a letter:"
+letter = gets.chomp
+p game.store_guessed_letters(letter)
+p game.repeat_letter
+puts "Okay Player 2, let's see how you did..."
+p game.reveal_letters(letter)
+
+puts "Alright Player 2, please enter another letter:"
+next_letter = gets.chomp
+p game.store_guessed_letters(next_letter)
+p game.repeat_letter
+puts "Okay Player 2, let's see how you did..."
+p game.reveal_letters(next_letter)
+
+
+# while !game.is_over
+# 	puts "Please enter a letter:"
+# 	letter = gets.chomp
+# 	p game.reveal_letters(letter)
+# 	if game.win
+# 		puts "You correctly guessed #{secret_word}. You win!"
+# 	else
+# 		game.lose
+# 		"Sorry, you're out of guesses. You lose! =("
+# 	end
+# end
 
 # # Driver Code
 # game = Word_Game.new('kaladesh')
