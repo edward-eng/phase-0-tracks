@@ -22,4 +22,16 @@ describe Word_Game do
 	it "shows current state of word given by player 1" do
 		expect(game.current_word_state).to eq "________"
 	end
+
+	it "checks the letter player 2 enters to see if the word player 1 entered contains the letter" do
+		expect(game.letter_match('a')).to eq [1, 3]
+	end
+
+	it "reveals letters correctly guessed by player 2" do
+		expect(game.reveal_letters('a')).to eq "_a_a____"
+	end
+
+	it "tells player 2 he or she won the game" do
+		expect(game.win).to eq "You correctly guessed kaladesh. You win!"
+	end
 end

@@ -16,8 +16,12 @@
 	# each underscore represents a letter in the word
 # define a method that checks the letter player 2 entered to see if it’s in the stored word
 	# the method should iterate through stored word array
-	# if the string matches the letter, return the index of that string
-	# the method should return an array of all the indexes
+	# if the string matches the letter, store the string’s index in an array
+	# the method should return an array of all the indexes stored
+# define a method that reveals letters correctly guessed by player 2
+	# the method should iterate through the secret word array
+	# then the method should replace any letter that hasn’t been guessed yet with an underscore
+	# the method should return a string that reveals all the correctly guessed letters so far and underscores in place of the letters that haven’t been guessed yet
 # define a method that lets player 2 know he or she won the game
 	# the method should show the correctly guessed word
 	# the method should also show a message saying ‘you win!’
@@ -26,11 +30,12 @@
 	# the method should also show a message saying ‘you lose!’
 
 class Word_Game
-	attr_accessor :guessed_letter
+	attr_accessor :guessed_letter, :indexes
 
 	def initialize(secret_word)
 		@secret_word = secret_word
 		@guessed_letter = ""
+		@indexes = []
 	end
 
 	def store_secret_word
@@ -59,6 +64,30 @@ class Word_Game
 	def current_word_state
 		"_" * @secret_word.length
 	end
+
+	def letter_match(guessed_letter)
+		store_secret_word.each_with_index do |letter, i|
+			@indexes << i if letter == guessed_letter
+		end
+		@indexes
+	end
+
+	def reveal_letters(guessed_letter)
+		new_secret_word_array = store_secret_word.map! do |letter|
+			if letter != guessed_letter
+				letter = "_"
+			else
+				letter = letter
+			end
+		end
+		new_secret_word_array.join
+	end
+
+	def win
+		if (limit_guesses > 0) && (!reveal_letters(guessed_letter).include?("_"))
+		end
+		"You correctly guessed #{@secret_word}. You win!"
+	end
 end
 
 # # Driver Code
@@ -68,3 +97,5 @@ end
 # p game.limit_guesses
 # p game.repeat_letter
 # p game.current_word_state
+# p game.letter_match('a')
+# p game.reveal_letters('a')
