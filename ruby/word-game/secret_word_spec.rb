@@ -3,25 +3,25 @@ require_relative 'secret_word'
 describe Word_Game do
 	let (:game) { Word_Game.new('kaladesh') }
 	
-	it "stores the word player 1 gives when the game is initialized" do
-		expect(game.store_secret_word).to eq ['k', 'a', 'l', 'a', 'd', 'e', 's', 'h']
-	end
+	# it "stores the word player 1 gives when the game is initialized" do
+	# 	expect(game.store_secret_word).to eq ['k', 'a', 'l', 'a', 'd', 'e', 's', 'h']
+	# end
 
 	it "stores letters that player 2 inputs" do
 		expect(game.store_guessed_letters('a')).to eq ['a']
 	end
 
-	it "limits the number of guesses player 2 has" do
-		expect(game.limit_guesses).to eq 16
-	end
+	# it "limits the number of guesses player 2 has" do
+	# 	expect(game.limit_guesses).to eq 16
+	# end
 
 	it "checks the letter player 2 enters to see if it's been guessed before" do
 		expect(game.repeat_letter).to eq 15
 	end
 
-	it "shows current state of word given by player 1" do
-		expect(game.current_word_state).to eq "________"
-	end
+	# it "shows current state of word given by player 1" do
+	# 	expect(game.current_word_state).to eq "________"
+	# end
 
 	it "checks the letter player 2 enters to see if the word player 1 entered contains the letter" do
 		expect(game.letter_match('a')).to eq [1, 3]

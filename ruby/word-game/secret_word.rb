@@ -30,51 +30,40 @@
 
 class Word_Game
 	attr_reader :is_over
-	attr_accessor :guessed_letter, :indexes
+	attr_accessor :guessed_letters, :guessed_letter, :indexes, :limit_guesses, :hidden_word
 
 	def initialize(secret_word)
 		@secret_word = secret_word
-		@guessed_letter = ""
 		@indexes = []
 		@is_over = false
-	end
-
-	def store_secret_word
-		@secret_word.split('')
+		@guessed_letters = []
+		@limited_guesses = @secret_word.length * 2
+		@hidden_word = "_" * @secret_word.length
+		@secret_word_array = @secret_word.split('')
 	end
 
 	def store_guessed_letters(guessed_letter)
 		@guessed_letter = guessed_letter
-		guessed_letters = []
-		guessed_letters << @guessed_letter
-		guessed_letters
-	end
-
-	def limit_guesses
-		@secret_word.length * 2
+		@guessed_letters << @guessed_letter
 	end
 
 	def repeat_letter
-		if store_guessed_letters(guessed_letter).include?(@guessed_letter) == true
-			limit_guesses - 1
+		if @guessed_letters.include?(@guessed_letter)
+			@limited_guesses - 1
 		else
-			limit_guesses
+			@limited_guesses
 		end
 	end
 
-	def current_word_state
-		"_" * @secret_word.length
-	end
-
 	def letter_match(guessed_letter)
-		store_secret_word.each_with_index do |letter, i|
+		@secret_word_array.each_with_index do |letter, i|
 			@indexes << i if letter == guessed_letter
 		end
 		@indexes
 	end
 
 	def reveal_letters(guessed_letter)
-		new_secret_word_array = store_secret_word.map! do |letter|
+		new_secret_word_array = @secret_word_array.map! do |letter|
 			if letter != guessed_letter
 				letter = "_"
 			else
@@ -85,14 +74,14 @@ class Word_Game
 	end
 
 	def win
-		if (limit_guesses > 0) && (!reveal_letters(guessed_letter).include?("_"))
+		if (@limited_guesses > 0) && (!reveal_letters(guessed_letter).include?("_"))
 		end
 		# @is_over = true
 		"You correctly guessed '#{@secret_word}'. You win!"
 	end
 
 	def lose
-		if (limit_guesses == 0) && (reveal_letters(guessed_letter).include?("_"))
+		if (@limited_guesses == 0) && (reveal_letters(guessed_letter).include?("_"))
 		end
 		# @is_over = true
 		"Sorry, you're out of guesses. You lose! =("
@@ -111,7 +100,7 @@ puts "It's Word Guesser time!!!"
 puts "Player 1, please enter a secret word:"
 secret_word = gets.chomp
 game = Word_Game.new(secret_word)
-puts "Okay Player 2, the secret word #{game.current_word_state} has #{game.limit_guesses/2} letters in it. You have #{game.limit_guesses} guesses to win the game. Good luck!"
+puts "Okay Player 2, the secret word #{game.hidden_word} has #{game.repeat_letter/2} letters in it. You have #{game.repeat_letter} guesses to win the game. Good luck!"
 
 
 puts "Player 2, please enter a letter:"
