@@ -86,7 +86,13 @@ class Word_Game
 	def win
 		if (limit_guesses > 0) && (!reveal_letters(guessed_letter).include?("_"))
 		end
-		"You correctly guessed #{@secret_word}. You win!"
+		"You correctly guessed '#{@secret_word}'. You win!"
+	end
+
+	def lose
+		if (limit_guesses = 0) && (reveal_letters(guessed_letter).include?("_"))
+		end
+		"Sorry, you're out of guesses. You lose! =("
 	end
 end
 
@@ -99,3 +105,5 @@ end
 # p game.current_word_state
 # p game.letter_match('a')
 # p game.reveal_letters('a')
+# p game.win
+# p game.lose

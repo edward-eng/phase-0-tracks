@@ -31,7 +31,11 @@ describe Word_Game do
 		expect(game.reveal_letters('a')).to eq "_a_a____"
 	end
 
-	it "tells player 2 he or she won the game" do
-		expect(game.win).to eq "You correctly guessed kaladesh. You win!"
+	it "tells player 2 he or she won" do
+		expect(game.win).to eq "You correctly guessed 'kaladesh'. You win!"
+	end
+
+	it "tells player 2 he or she lost" do
+		expect(game.lose).to eq "Sorry, you're out of guesses. You lose! =("
 	end
 end
