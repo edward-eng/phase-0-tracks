@@ -26,7 +26,6 @@
 	# the method should show the correctly guessed word
 	# the method should also show a message saying ‘you win!’
 # define a method that lets player 2 know he or she lost the game
-	# the method should show the incomplete word player 2 guessed
 	# the method should also show a message saying ‘you lose!’
 
 class Word_Game
