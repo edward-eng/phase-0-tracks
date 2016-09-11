@@ -29,12 +29,14 @@
 	# the method should also show a message saying ‘you lose!’
 
 class Word_Game
+	attr_reader :is_over
 	attr_accessor :guessed_letter, :indexes
 
 	def initialize(secret_word)
 		@secret_word = secret_word
 		@guessed_letter = ""
 		@indexes = []
+		@is_over = false
 	end
 
 	def store_secret_word
@@ -85,12 +87,40 @@ class Word_Game
 	def win
 		if (limit_guesses > 0) && (!reveal_letters(guessed_letter).include?("_"))
 		end
-		"You correctly guessed '#{@secret_word}'. You win!"
+		@is_over = true
+		# "You correctly guessed '#{@secret_word}'. You win!"
 	end
 
 	def lose
-		if (limit_guesses = 0) && (reveal_letters(guessed_letter).include?("_"))
+		if (limit_guesses == 0) && (reveal_letters(guessed_letter).include?("_"))
 		end
+		@is_over = true
+		# "Sorry, you're out of guesses. You lose! =("
+	end
+end
+
+# User Interface
+# Start an instance of the game and ask player 1 for a secret word
+# Show player 2 a hidden version of the secret word
+# Let player 2 know how many guesses he or she has to win
+# Ask player 2 for a letter
+# Show player 2 the updated hidden version of the secret word
+# Keep asking player 2 for letters until he or she wins the game or runs out of guesses
+
+puts "It's Word Guesser time!!!"
+puts "Player 1, please enter a secret word:"
+secret_word = gets.chomp
+game = Word_Game.new(secret_word)
+puts "Okay Player 2, the secret word #{game.current_word_state} has #{game.limit_guesses/2} letters in it. You have #{game.limit_guesses} guesses to win the game. Good luck!"
+
+while !game.is_over
+	puts "Please enter a letter:"
+	letter = gets.chomp
+	p game.reveal_letters(letter)
+	if game.win
+		puts "You correctly guessed #{secret_word}. You win!"
+	else
+		game.lose
 		"Sorry, you're out of guesses. You lose! =("
 	end
 end
