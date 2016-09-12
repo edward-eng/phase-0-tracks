@@ -37,12 +37,18 @@
 # Exit the game
 
 class Game
-	attr_reader :secret_word
-	attr_accessor :hidden_word, :guesses
+	attr_reader :secret_word, :letter_entered
+	attr_accessor :hidden_word, :guesses, :guessed_letters
 
 	def initialize(secret_word)
 		@secret_word = secret_word
 		@hidden_word = "_" * @secret_word.length
 		@guesses = @secret_word.length * 2
+		@guessed_letters = []
+	end
+
+	def guessed_letters(letter)
+		@letter_entered = letter
+		@guessed_letters << @letter_entered
 	end
 end

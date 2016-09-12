@@ -14,4 +14,8 @@ describe Game do
 	it "tells player 2 how many guesses he or she has" do
 		expect(word_guess.guesses).to eq 16
 	end
+
+	it "stores the letters player 2 enters" do
+		expect(word_guess.guessed_letters("a")).to eq ["a"]
+	end
 end
