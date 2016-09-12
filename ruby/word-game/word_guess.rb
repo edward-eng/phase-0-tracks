@@ -1,0 +1,45 @@
+# Pseudocode - secret word guessing game
+
+
+# The game will start out by greeting the players.
+# Then the game will ask player 1 for a secret word.
+# It’ll store the secret word.
+
+
+# Then the game will show player 2 a hidden word.
+# The hidden word will contain underscores each representing a letter of the secret word.
+
+
+# Then the game will tell player 2 how many guesses he or she has to win the game.
+# The number of guesses is equal to twice the length of the secret word.
+# Then the game will ask player 2 for a letter.
+# The game will store this letter.
+
+
+# Then the game will check to see if the letter is in the secret word.
+	# If the letter is in the word, replace the corresponding underscores with the letter.
+# The game will show player 2 an updated version of the hidden word.
+
+
+# The game will show player 2 the letters that he or she has guessed so far.
+# Then the game will ask player 2 for another letter and store it.
+	# If player 2 enters a letter he or she has guessed before, prompt the player to enter another letter.
+# The game will check to see if the letter is in the secret word.
+	# If the letter is in the word, update the latest version of the hidden word to replace all corresponding underscores.
+	# If there are no more letters to guess, print a message showing the player the correctly guessed word and a message saying ‘you win!’
+	# Otherwise, show the player an updated version of the hidden word and ask the player for another letter.
+
+
+# Repeat this process until the user wins the game or runs out of guesses.
+	# If the player runs out of guesses, print a message showing the last updated version of the hidden word and message saying ‘you lose!’
+
+
+# Exit the game
+
+class Game
+	attr_reader :secret_word
+	
+	def initialize(secret_word)
+		@secret_word = secret_word
+	end
+end
