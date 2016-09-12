@@ -38,8 +38,10 @@
 
 class Game
 	attr_reader :secret_word
-	
+	attr_accessor :hidden_word
+
 	def initialize(secret_word)
 		@secret_word = secret_word
+		@hidden_word = "_" * @secret_word.length
 	end
 end
