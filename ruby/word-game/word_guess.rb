@@ -37,7 +37,7 @@
 # Exit the game
 
 class Game
-	attr_reader :secret_word, :letter_entered
+	attr_reader :secret_word, :letter_entered, :secret_word_array
 	attr_accessor :hidden_word, :guesses, :guessed_letters
 
 	def initialize(secret_word)
@@ -45,10 +45,24 @@ class Game
 		@hidden_word = "_" * @secret_word.length
 		@guesses = @secret_word.length * 2
 		@guessed_letters = []
+		@secret_word_array = @secret_word.split('')
 	end
 
-	def guessed_letters(letter)
+	def store_letters(letter)
 		@letter_entered = letter
 		@guessed_letters << @letter_entered
+	end
+
+	def successful_letter(char)
+		@indices = []
+		@secret_word_array.each_with_index do |letter, i|
+			@indices << i if letter == char
+  		end
+  		@indices
+
+  		@indices.each do |i|
+  			@hidden_word[i] = char
+  		end
+  		@hidden_word
 	end
 end

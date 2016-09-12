@@ -16,6 +16,10 @@ describe Game do
 	end
 
 	it "stores the letters player 2 enters" do
-		expect(word_guess.guessed_letters("a")).to eq ["a"]
+		expect(word_guess.store_letters("a")).to eq ["a"]
+	end
+
+	it "checks to see if the letter player 2 entered matches any letters of the secret word" do
+		expect(word_guess.successful_letter("a")).to eq "_a_a____"
 	end
 end
