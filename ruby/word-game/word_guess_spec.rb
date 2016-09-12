@@ -26,4 +26,8 @@ describe Game do
 	it "tells player 2 he or she won" do
 		expect(word_guess.win).to eq "You correctly guessed 'kaladesh'. Congrats, you win!"
 	end
+
+	it "tells player 2 he or she lost" do
+		expect(word_guess.lose).to eq "Sorry, you don't have any guesses left. You lose. =("
+	end
 end

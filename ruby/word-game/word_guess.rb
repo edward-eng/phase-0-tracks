@@ -70,4 +70,8 @@ class Game
 	def win
 		"You correctly guessed '#{@secret_word}'. Congrats, you win!"
 	end
+
+	def lose
+		"Sorry, you don't have any guesses left. You lose. =("
+	end
 end
