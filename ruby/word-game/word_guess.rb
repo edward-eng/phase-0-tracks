@@ -17,16 +17,18 @@
 # The game will show player 2 an updated version of the hidden word.
 
 # The game will show player 2 the letters that he or she has guessed so far.
+# Then the game will show player 2 the latest version of the hidden word.
+# Then the game will show player 2 how many guesses he or she has left.
 # Then the game will ask player 2 for another letter.
-	# If player 2 enters a letter he or she has guessed before, prompt the player to enter another letter. Then store that letter.
-	# Otherwise, store the letter.
-# The game will check to see if the letter is in the secret word.
-	# If the letter is in the word, update the latest version of the hidden word to replace all corresponding underscores.
-	# If there are no more letters to guess, print a message showing the player the correctly guessed word and a message saying ‘you win!’
-	# Otherwise, show the player an updated version of the hidden word and ask the player for another letter.
+# The game will store this letter.
+# The game will check to see if this letter has been guessed before.
+	# If player 2 entered a letter he or she has guessed before, prompt the player to enter another letter. Then store that letter. The game will check to see if the letter is in the secret word.
+		# If the letter is in the secret word, replace the corresponding underscores in the hidden word.
+		# The game will show player 2 an updated version of the hidden word.
 
-# Repeat this process until the user wins the game or runs out of guesses.
-	# If the player runs out of guesses, print a message showing the last updated version of the hidden word and message saying ‘you lose!’
+# Repeat this process until there are no more letters to guess or if player 2 runs out of guesses
+	# If there are no more letters to guess, tell player 2 he or she won.
+	# If player 2 runs out of guesses, tell him or her she lost.
 
 # Exit the game
 
