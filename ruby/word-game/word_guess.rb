@@ -66,4 +66,10 @@ class Game
   		end
   		@hidden_word
 	end
+
+	def win
+		if !@hidden_word.include?("_")
+		end
+		"You correctly guessed '#{@secret_word}'. Congrats, you win!"
+	end
 end

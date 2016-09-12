@@ -22,4 +22,8 @@ describe Game do
 	it "checks to see if the letter player 2 entered matches any letters of the secret word" do
 		expect(word_guess.successful_letter("a")).to eq "_a_a____"
 	end
+
+	it "tells player 2 he or she won" do
+		expect(word_guess.win).to eq "You correctly guessed 'kaladesh'. Congrats, you win!"
+	end
 end
