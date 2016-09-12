@@ -22,8 +22,9 @@
 
 
 # The game will show player 2 the letters that he or she has guessed so far.
-# Then the game will ask player 2 for another letter and store it.
+# Then the game will ask player 2 for another letter.
 	# If player 2 enters a letter he or she has guessed before, prompt the player to enter another letter.
+	# Otherwise, store the letter.
 # The game will check to see if the letter is in the secret word.
 	# If the letter is in the word, update the latest version of the hidden word to replace all corresponding underscores.
 	# If there are no more letters to guess, print a message showing the player the correctly guessed word and a message saying ‘you win!’
