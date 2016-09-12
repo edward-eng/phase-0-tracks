@@ -30,4 +30,8 @@ describe Game do
 	it "tells player 2 he or she lost" do
 		expect(word_guess.lose).to eq "Sorry, you don't have any guesses left. You lose. =("
 	end
+
+	it "checks to see if the letter player 2 enters has been guessed before" do
+		expect(word_guess.guessed_before("a")).to eq "Sorry, you guessed 'a' before, please enter another letter:"
+	end
 end

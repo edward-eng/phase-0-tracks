@@ -69,6 +69,14 @@ class Game
 	def lose
 		"Sorry, you don't have any guesses left. You lose. =("
 	end
+
+	def guessed_before(char)
+		if @guessed_letters.include?(char)
+			"Sorry, you guessed '#{char}' before, please enter another letter:"
+		else
+			successful_letter(char)
+		end
+	end
 end
 
 
@@ -89,49 +97,62 @@ letter = gets.chomp
 word_guess.store_letters(letter)
 word_guess.successful_letter(letter)
 
-until !word_guess.hidden_word.include?("_") || word_guess == 0
+loop do
 	puts "Okay Player 2, here are the letters you've guessed so far...#{word_guess.guessed_letters}."
 	puts "'#{word_guess.hidden_word}'"
 	puts "You have #{word_guess.guesses - 1} guesses to win the game. Good luck!"
 	puts "Please enter another letter you'd like to guess."
 	next_letter = gets.chomp
-
-	if word_guess.guessed_letters.include?(next_letter)
-		puts "Sorry, you picked that letter before. Please enter another letter:"
-		another_letter = gets.chomp
-		word_guess.store_letters(another_letter)
-		word_guess.successful_letter(another_letter)
-		puts "'#{word_guess.hidden_word}'"
-		puts "Please enter another letter you'd like to guess."
-		if !word_guess.hidden_word.include?("_")
-			word_guess.win
-		else
-			puts "'#{word_guess.hidden_word}'"
-			puts "You have #{word_guess.guesses - 2} guesses to win the game. Good luck!"
-			puts "Please enter another letter you'd like to guess."
-			next_letter = gets.chomp
-			if word_guess.guesses == 0
-				puts "You guessed '#{word_guess.hidden_word}'"
-				word_guess.lose
-			end
-		end
-	else
-		word_guess.store_letters(next_letter)
-		word_guess.successful_letter(next_letter)
-		puts "'#{word_guess.hidden_word}'"
-		puts "You have #{word_guess.guesses} guesses to win the game. Good luck!"
-		puts "Please enter another letter you'd like to guess."
-		if !word_guess.hidden_word.include?("_")
-			word_guess.win
-		else
-			puts "'#{word_guess.hidden_word}'"
-			puts "You have #{word_guess.guesses - 2} guesses to win the game. Good luck!"
-			puts "Please enter another letter you'd like to guess."
-			next_letter = gets.chomp
-			if word_guess.guesses == 0
-				puts "You guessed '#{word_guess.hidden_word}'"
-				word_guess.lose
-			end
-		end
-	end
+	word_guess.guessed_before(next_letter)
+	break if !word_guess.hidden_word.include?("_") || word_guess.guesses == 0
 end
+
+
+
+# ========================================
+# until !word_guess.hidden_word.include?("_") || word_guess.guesses == 0
+# 	puts "Okay Player 2, here are the letters you've guessed so far...#{word_guess.guessed_letters}."
+# 	puts "'#{word_guess.hidden_word}'"
+# 	puts "You have #{word_guess.guesses - 1} guesses to win the game. Good luck!"
+# 	puts "Please enter another letter you'd like to guess."
+# 	next_letter = gets.chomp
+
+# 	if word_guess.guessed_letters.include?(next_letter)
+# 		puts "Sorry, you picked that letter before. Please enter another letter:"
+# 		another_letter = gets.chomp
+# 		word_guess.store_letters(another_letter)
+# 		word_guess.successful_letter(another_letter)
+# 		puts "'#{word_guess.hidden_word}'"
+# 		puts "Please enter another letter you'd like to guess."
+# 		if !word_guess.hidden_word.include?("_")
+# 			word_guess.win
+# 		else
+# 			puts "'#{word_guess.hidden_word}'"
+# 			puts "You have #{word_guess.guesses - 2} guesses to win the game. Good luck!"
+# 			puts "Please enter another letter you'd like to guess."
+# 			next_letter = gets.chomp
+# 			if word_guess.guesses == 0
+# 				puts "You guessed '#{word_guess.hidden_word}'"
+# 				word_guess.lose
+# 			end
+# 		end
+# 	else
+# 		word_guess.store_letters(next_letter)
+# 		word_guess.successful_letter(next_letter)
+# 		puts "'#{word_guess.hidden_word}'"
+# 		puts "You have #{word_guess.guesses} guesses to win the game. Good luck!"
+# 		puts "Please enter another letter you'd like to guess."
+# 		if !word_guess.hidden_word.include?("_")
+# 			word_guess.win
+# 		else
+# 			puts "'#{word_guess.hidden_word}'"
+# 			puts "You have #{word_guess.guesses - 2} guesses to win the game. Good luck!"
+# 			puts "Please enter another letter you'd like to guess."
+# 			next_letter = gets.chomp
+# 			if word_guess.guesses == 0
+# 				puts "You guessed '#{word_guess.hidden_word}'"
+# 				word_guess.lose
+# 			end
+# 		end
+# 	end
+# end
