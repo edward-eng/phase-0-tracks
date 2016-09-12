@@ -10,4 +10,8 @@ describe Game do
 	it "shows player 2 a hidden word" do
 		expect(word_guess.hidden_word).to eq "________"
 	end
+
+	it "tells player 2 how many guesses he or she has" do
+		expect(word_guess.guesses).to eq 16
+	end
 end
