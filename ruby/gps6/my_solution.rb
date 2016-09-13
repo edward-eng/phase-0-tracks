@@ -19,14 +19,14 @@ class VirusPredictor
 
 # Runs methods defined further below passing our existing variables as arguments.
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private #what is this?
 
 # Takes 3 params. print a statement that calculates number of deaths via outbreak depending on population density.
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -45,7 +45,7 @@ class VirusPredictor
   end
 
 # Takes 2 parameters. Uses control flow to set a value for speed contingent on population density and prints a statement containing that value for speed.
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
