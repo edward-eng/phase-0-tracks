@@ -3,8 +3,8 @@ require_relative 'word_guess'
 describe Game do
 	let(:word_guess) { Game.new("kaladesh") }
 
-	it "stores the secret word player 1 enters when the game is initialized" do
-		expect(word_guess.secret_word).to eq "kaladesh"
+	it "determines number of guesses player 2 has based on the length of the word player 1 gives upon initialization" do
+		expect(word_guess.guesses).to eq ("kaladesh".length * 2)
 	end
 
 	it "shows player 2 a hidden word" do
