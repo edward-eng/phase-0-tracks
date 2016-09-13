@@ -115,9 +115,9 @@ loop do
   puts "You have #{word_guess.guesses} guesses to win the game. Good luck!"
   puts "Please enter another letter you'd like to guess."
   next_letter = gets.chomp
-  word_guess.store_letters(next_letter)
   word_guess.guessed_before(next_letter)
   word_guess.guesses -= 1
+  word_guess.store_letters(next_letter)
   
   if !word_guess.hidden_word.include?("_")
     word_guess.win
