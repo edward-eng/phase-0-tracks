@@ -35,55 +35,63 @@
 
 # ========================================
 class Game
-	attr_reader :secret_word, :letter_entered, :secret_word_array
-	attr_accessor :hidden_word, :guesses, :guessed_letters
+  attr_reader :hidden_word, :guessed_letters
+  attr_accessor :guesses
 
-	def initialize(secret_word)
-		@secret_word = secret_word
-		@hidden_word = "_" * @secret_word.length
-		@guesses = @secret_word.length * 2
-		@guessed_letters = []
-		@secret_word_array = @secret_word.split('')
-	end
+  def initialize(secret_word)
+    @secret_word = secret_word
+    @hidden_word = "_" * @secret_word.length
+    @guesses = @secret_word.length * 2
+    @guessed_letters = []
+    @secret_word_array = @secret_word.split('')
+  end
 
-	def store_letters(letter)
-		@letter_entered = letter
-		@guessed_letters << @letter_entered
-	end
+  def store_letters(letter)
+    @guessed_letters << letter
+  end
 
-	def successful_letter(char)
-		@indices = []
-		@secret_word_array.each_with_index do |letter, i|
-			@indices << i if letter == char
-  		end
-  		@indices
+  def successful_letter(char)
+    indices = []
+    @secret_word_array.each_with_index do |letter, i|
+      indices << i if letter == char
+    end
 
-  		@indices.each do |i|
-  			@hidden_word[i] = char
-  		end
-  		@hidden_word
-	end
+    indices.each do |i|
+      @hidden_word[i] = char
+    end
+    
+    @hidden_word
+  end
 
-	def win
-		"You correctly guessed '#{@secret_word}'. Congrats, you win!"
-	end
+  def win
+    p "You correctly guessed '#{@secret_word}'. Congrats, you win!"
+  end
 
-	def lose
-		"Sorry, you don't have any guesses left. You lose. =("
-	end
+  def lose
+    p "Sorry, you don't have any guesses left. You lose. =("
+  end
 
-	def guessed_before(char)
-		if @guessed_letters.include?(char)
-			"Sorry, you guessed '#{char}' before, please enter another letter:"
-		else
-			successful_letter(char)
-		end
-	end
+  def guessed_before(char)
+    if @guessed_letters.include?(char)
+      "Sorry, you guessed '#{char}' before, please enter another letter:"
+    else
+      successful_letter(char)
+    end
+  end
 end
 
 
 # ========================================
 # USER INTERFACE
+
+# READ
+# hidden_word
+# guesses
+# guessed_letters
+
+# WRITE
+# guesses
+
 
 puts "It's time to play 'Guess that Word'!!!"
 puts "Alright Player 1, please enter a secret word:"
@@ -98,15 +106,26 @@ puts "Please enter a letter you'd like to guess:"
 letter = gets.chomp
 word_guess.store_letters(letter)
 word_guess.successful_letter(letter)
+word_guess.guesses -= 1
 
 loop do
-	puts "Okay Player 2, here are the letters you've guessed so far...#{word_guess.guessed_letters}."
-	puts "'#{word_guess.hidden_word}'"
-	puts "You have #{word_guess.guesses - 1} guesses to win the game. Good luck!"
-	puts "Please enter another letter you'd like to guess."
-	next_letter = gets.chomp
-	word_guess.guessed_before(next_letter)
-	break if !word_guess.hidden_word.include?("_") || word_guess.guesses == 0
+  
+  puts "Okay Player 2, here are the letters you've guessed so far...#{word_guess.guessed_letters}."
+  puts "'#{word_guess.hidden_word}'"
+  puts "You have #{word_guess.guesses} guesses to win the game. Good luck!"
+  puts "Please enter another letter you'd like to guess."
+  next_letter = gets.chomp
+  word_guess.store_letters(next_letter)
+  word_guess.guessed_before(next_letter)
+  word_guess.guesses -= 1
+  
+  if !word_guess.hidden_word.include?("_")
+    word_guess.win
+    break
+  elsif word_guess.guesses == 0
+    word_guess.lose
+    break
+  end
 end
 
 
