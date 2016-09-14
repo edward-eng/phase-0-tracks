@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge with Derrick Carr.
+# We spent 2 hours on this challenge.
 
 # EXPLANATION OF require_relative
 # require_relative lets you treat the current working directory as a given without needing to reference the containing directory itself.
@@ -10,21 +10,21 @@
 require_relative 'state_data'
 
 class VirusPredictor
-# This method initializes an instance of the virus predictor class. It currently takes 3 params and assigns them as instance variables.
+# The method takes in a state as a parameter and sets that as an instance variable upon initializing an instance of the virus predictor class. It also stores state population and density in corresponding variables.
   def initialize(state_of_origin)
     @state = state_of_origin
     @population = STATE_DATA[state_of_origin][:population]
     @population_density = STATE_DATA[state_of_origin][:population_density]
   end
 
-# Runs methods defined further below passing our existing variables as arguments.
+# Prints a statement that shows a predicted number of deaths in a given time across a given state.
   def virus_effects
     print "#{@state} will lose #{predicted_deaths} people in this outbreak and will spread across the state in #{speed_of_spread} months.\n\n"
   end
 
   private
 
-# Takes 3 params. print a statement that calculates number of deaths via outbreak depending on population density.
+# Returns a predicted number of deaths based on a state's population density.
   def predicted_deaths
     # predicted deaths is solely based on population density
 
@@ -44,7 +44,7 @@ class VirusPredictor
 
   end
 
-# Takes 2 parameters. Uses control flow to set a value for speed contingent on population density and prints a statement containing that value for speed.
+# Determines how fast the outbreak will spread based on a state's population density.
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -90,32 +90,6 @@ STATE_DATA.each_key { |state_name| VirusPredictor.new(state_name).virus_effects 
 
 
 
-
-
-
-
-
-#=======================================================================
-
-# DRIVER CODE
- # initialize VirusPredictor for each state
-
-
-# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-# alabama.virus_effects
-
-# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-# jersey.virus_effects
-
-# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-# california.virus_effects
-
-# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-# alaska.virus_effects
-
-
-#=======================================================================
-# Reflection Section
 
 # =====
 # Old Work
