@@ -112,10 +112,6 @@ STATE_DATA.each_key { |state_name| VirusPredictor.new(state_name).virus_effects 
 
 
 
-
-
-
-
 # ==============================
 # ==============================
 # ==============================
