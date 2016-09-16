@@ -30,10 +30,21 @@ var newCar = new Car("Honda", "Civic", "white");
 console.log(newCar);
 newCar.takeOff();
 
+var car = {
+	make: "Honda",
+	model: "Civic",
+	color: "white",
+	fullTank: true,
+	gasLight: function() {
+		if (this.fullTank) {
+			console.log("Step on it!");
+			} else {
+				console.log ("You need gas now.");
+			}
+	}
+}
 
-
-
-
+car.gasLight();
 
 
 
