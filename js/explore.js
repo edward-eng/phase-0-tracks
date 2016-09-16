@@ -14,6 +14,8 @@ function reverseString(string) {
 var reversed_string = reverseString('palindrome');
 console.log(reversed_string);
 
+if (1 == 1) {console.log(reversed_string)};
+
 
 
 
