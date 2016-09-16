@@ -30,6 +30,14 @@ var newCar = new Car("Honda", "Civic", "white");
 console.log(newCar);
 newCar.takeOff();
 
+var newCar = new Car("Ford", "Mustang", "black");
+console.log(newCar);
+newCar.takeOff();
+
+var newCar = new Car("Kia", "Sonata", "gold");
+console.log(newCar);
+newCar.takeOff();
+
 var car = {
 	make: "Honda",
 	model: "Civic",
