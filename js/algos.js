@@ -1,4 +1,4 @@
-// PSEUDOCODE
+// PSEUDOCODE - RELEASE 0
 // Write a function that takes an array of words or phrases as an argument.
 // Declare a longest_string variable that starts out equal to an empty string.
 // Iterate through the array.
@@ -17,6 +17,14 @@ function longestString(array) {
 
 var result = longestString(["long phrase","longest phrase","longer phrase"]);
 console.log(result);
+
+// PSEUDOCODE - RELEASE 1
+// Write a function that takes two objects as an argument.
+// Iterate through the first object to see if any of its keys match any of the keys of the second object.
+// If a key matches, check to see if the values of that key match. If they do, return true.
+// Otherwise, return false.
+
+
 
 
 
