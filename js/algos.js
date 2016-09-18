@@ -20,11 +20,43 @@ console.log(result);
 
 // PSEUDOCODE - RELEASE 1
 // Write a function that takes two objects as an argument.
+// Declare a variable that starts out equal to false since there are no matches between object1 and object2 in the beginning.
 // Iterate through the first object to see if any of its keys match any of the keys of the second object.
-// If a key matches, check to see if the values of that key match. If they do, return true.
-// Otherwise, return false.
+// If a key matches, check to see if the values of that key match. If they do, return a value of true for the match variable.
+// Otherwise, return a value of false.
 
+function kvMatcher(object1, object2) {
+	var match = false;
+	for (var info2 in object2){
+	}
 
+	for (var info1 in object1) {
+		if (object2.hasOwnProperty(info1)) {
+			if (object1[info2] == object2[info2]) {
+				return match = true;
+			}
+			else {
+				return match = false;
+			}
+		}
+		else {
+			return match = false;
+		}
+	}
+}
+
+// DRIVER CODE
+var match_result = kvMatcher({name: "Steven", age: 54}, {name: "Tamir", age: 54})
+console.log(match_result)
+
+var match_result = kvMatcher({name: "Steven", age: 54}, {name: "Tamir", age: 14})
+console.log(match_result)
+
+var match_result = kvMatcher({name: "Steven", num: 54}, {name: "Tamir", age: 54})
+console.log(match_result)
+
+var match_result = kvMatcher({person: "Tamir", age: 54}, {name: "Tamir", age: 54})
+console.log(match_result)
 
 
 
@@ -93,7 +125,7 @@ console.log(result);
 // 	}
 // }
 
-// // Driver Code
+// // // Driver Code
 // var match_result = key_value_match({name: "Steven", age: 54}, {name: "Tamir", age: 54})
 // console.log(match_result)
 
