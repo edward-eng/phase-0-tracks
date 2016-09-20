@@ -59,3 +59,8 @@ output
 4|Gideon, Ally of Zendikar|White|2WW|Planeswalker|n/a|true|1|4
 5|Emrakul, the Promised End|n/a|13|Creature|13/13|true|1|3
 6|Mana Drain|Blue|UU|Instant|n/a|false|3|1
+
+RELEASE 3 - FIND THE THING 1
+
+
+RELEASE 3 - FIND THE THING 2
