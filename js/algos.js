@@ -5,19 +5,19 @@
 // If the length of the current element is longer than the length of the string in the longest_string variable, set the value of the variable to the current element.
 // Return the value of the longest_string variable.
 
-function longestString(array) {
-	var longest_string = '';
-	for (var i = 0; i < array.length; i++) {
-		if (array[i].length > longest_string.length) {
-			longest_string = array[i];
-		}
-	}
-	return longest_string;
-}
+// function longestString(array) {
+// 	var longest_string = '';
+// 	for (var i = 0; i < array.length; i++) {
+// 		if (array[i].length > longest_string.length) {
+// 			longest_string = array[i];
+// 		}
+// 	}
+// 	return longest_string;
+// }
 
-// DRIVER CODE - RELEASE 0
-var result = longestString(["long phrase","longest phrase","longer phrase"]);
-console.log(result);
+// // DRIVER CODE - RELEASE 0
+// var result = longestString(["long phrase","longest phrase","longer phrase"]);
+// console.log(result);
 
 // PSEUDOCODE - RELEASE 1
 // Write a function that takes two objects as an argument.
@@ -28,22 +28,23 @@ console.log(result);
 
 function kvMatcher(object1, object2) {
 	var match = false;
-	for (var info2 in object2){
-	}
+	// for (var info2 in object2){
+	// }
 
 	for (var info1 in object1) {
 		if (object2.hasOwnProperty(info1)) {
-			if (object1[info2] == object2[info2]) {
-				return match = true;
+			if (object1[info1] == object2[info1]) {
+				match = true;
 			}
-			else {
-				return match = false;
-			}
+			// else {
+			// 	return match = false;
+			// }
 		}
 		else {
-			return match = false;
+			match = false;
 		}
 	}
+	return match;
 }
 
 // DRIVER CODE - RELEASE 1
@@ -65,35 +66,35 @@ console.log(match_result)
 // Add strings to the array until the number a strings equals the integer that was given as an argument.
 // The length of the strings should be random with at least 1 letter but no more than 10.
 
-function randomWordLength() {
-	var length = Math.floor((Math.random() * 10) + 1);
-	return length;
-}
+// function randomWordLength() {
+// 	var length = Math.floor((Math.random() * 10) + 1);
+// 	return length;
+// }
 
-function randomLetter() {
-	var alphabet = 'abcdefghijklmnopqrstuvwxyz';
-	var letter = Math.floor((Math.random() * 25) + 1);
-	return letter;
-}
+// function randomLetter() {
+// 	var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+// 	var letter = Math.floor((Math.random() * 25) + 1);
+// 	return letter;
+// }
 
-function randomWord() {
-	var wordLength = random_word_length();
-	var randomString = '';
-	for (i = 0; i < wordLength; i++) {
-		randomString += randomLetter();
-	}
-	return randomString;
-}
+// function randomWord() {
+// 	var wordLength = random_word_length();
+// 	var randomString = '';
+// 	for (i = 0; i < wordLength; i++) {
+// 		randomString += randomLetter();
+// 	}
+// 	return randomString;
+// }
 
-function randomTestData(integer) {
-	var word_array = [];
-	for (i = 0; i < integer; i++) {
-		word_array.push(randomWord());
-	}
-	return word_array;
-}
+// function randomTestData(integer) {
+// 	var word_array = [];
+// 	for (i = 0; i < integer; i++) {
+// 		word_array.push(randomWord());
+// 	}
+// 	return word_array;
+// }
 
-randomTestData(3)
+// randomTestData(3)
 
 
 
@@ -177,50 +178,50 @@ randomTestData(3)
 // // Then the function should populate the array with random strings until the number of strings equals the integer given.
 // // The random strings should contain at least 1 letter but not more than 10.
 
-function random_test_data(array_length){
-	empty_array = []
-	for (var i = 0; i < array_length; i++){
-		empty_array.push(build_random_word());
-	}
-	return(empty_array);
-}
+// function random_test_data(array_length){
+// 	empty_array = []
+// 	for (var i = 0; i < array_length; i++){
+// 		empty_array.push(build_random_word());
+// 	}
+// 	return(empty_array);
+// }
 
-random_test_data(3)
-console.log(random_test_data(3))
+// random_test_data(3)
+// console.log(random_test_data(3))
 
-// Pseudocode (random_word_length function)
-// Pick a random number from 1 through 10.
+// // Pseudocode (random_word_length function)
+// // Pick a random number from 1 through 10.
 
-function random_word_length() {
-	var random_number = Math.floor((Math.random() * 10) + 1);
-	return random_number;
-}
+// function random_word_length() {
+// 	var random_number = Math.floor((Math.random() * 10) + 1);
+// 	return random_number;
+// }
 
-// console.log(random_word_length());
+// // console.log(random_word_length());
 
-// Pseudocode (random_letter function)
-// Pick a random letter based a random index of the alphabet.
+// // Pseudocode (random_letter function)
+// // Pick a random letter based a random index of the alphabet.
 
-function random_letter() {
-	var random_number = Math.floor((Math.random() * 25) + 1);
-	var alphabet = "abcdefghijklmnopqrstuvwxyz";
-	return alphabet[random_number];
-}
+// function random_letter() {
+// 	var random_number = Math.floor((Math.random() * 25) + 1);
+// 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+// 	return alphabet[random_number];
+// }
 
-// console.log(random_letter());
+// // console.log(random_letter());
 
-// Pseudocode (build_random_word function)
-// Call random_word_length function to get a random number from 1 through 10.
-// Store that number in a variable called word_length.
-// Create a empty string and store it in a variable called random_string.
-// Run a loop to generate a random string that's the same length as the word_length.
-// Return the random_string.
+// // Pseudocode (build_random_word function)
+// // Call random_word_length function to get a random number from 1 through 10.
+// // Store that number in a variable called word_length.
+// // Create a empty string and store it in a variable called random_string.
+// // Run a loop to generate a random string that's the same length as the word_length.
+// // Return the random_string.
 
-function build_random_word(){
-	var word_length = random_word_length();
-	var random_string = "";
-	for (var i = 0; i < word_length; i++){
-		random_string += random_letter();
-	}
-	return random_string;
-}
+// function build_random_word(){
+// 	var word_length = random_word_length();
+// 	var random_string = "";
+// 	for (var i = 0; i < word_length; i++){
+// 		random_string += random_letter();
+// 	}
+// 	return random_string;
+// }
