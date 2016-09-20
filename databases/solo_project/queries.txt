@@ -1,7 +1,7 @@
 RELEASE 2 - DO THE THING 1
 
 command
-select * from cards;
+SELECT * FROM cards;
 
 output
 1|Tabernacle at Pendrell Vale|n/a|n/a|Land|n/a|false|2|1
@@ -13,3 +13,49 @@ output
 
 RELEASE 2 - DO THE THING 1
 
+command
+UPDATE sets SET Legal_Formats='Legacy, Vintage, Commander, Old School' WHERE ID=1;
+
+output
+1|Legends|false|1994|Legacy, Vintage, Commander, Old School
+2|Kaladesh|true|2016|Standard, Modern, Legacy, Vintage, Commander
+3|Eldritch Moon|true|2016|Standard, Modern, Legacy, Vintage, Commander
+4|Battle for Zendikar|true|2015|Standard, Modern, Legacy, Vintage, Commander
+
+RELEASE 2 - DO THE THING 3
+
+command
+SELECT * FROM cards, sets WHERE cards.Set_ID = sets.ID;
+
+output
+1|Tabernacle at Pendrell Vale|n/a|n/a|Land|n/a|false|2|1|1|Legends|false|1994|Legacy, Vintage, Commander, Old School
+2|Cathartic Reunion|Red|1R|Sorcery|n/a|true|1|2|2|Kaladesh|true|2016|Standard, Modern, Legacy, Vintage, Commander
+3|Elder Deep-Fiend|n/a|8|Creature|5/6|true|1|3|3|Eldritch Moon|true|2016|Standard, Modern, Legacy, Vintage, Commander
+4|Gideon, Ally of Zendikar|White|2WW|Planeswalker|n/a|true|1|4|4|Battle for Zendikar|true|2015|Standard, Modern, Legacy, Vintage, Commander
+5|Emrakul, the Promised End|n/a|13|Creature|13/13|true|1|3|3|Eldritch Moon|true|2016|Standard, Modern, Legacy, Vintage, Commander
+6|Mana Drain|Blue|UU|Instant|n/a|false|3|1|1|Legends|false|1994|Legacy, Vintage, Commander, Old School
+
+RELEASE 2 - DO THE THING 4
+
+command
+SELECT cards.ID, cards.name, sets.name FROM cards JOIN sets ON cards.Set_ID = sets.ID;
+
+output
+1|Tabernacle at Pendrell Vale|Legends
+2|Cathartic Reunion|Kaladesh
+3|Elder Deep-Fiend|Eldritch Moon
+4|Gideon, Ally of Zendikar|Battle for Zendikar
+5|Emrakul, the Promised End|Eldritch Moon
+6|Mana Drain|Legends
+
+RELEASE 2 - DO THE THING 5
+
+command
+DELETE FROM cards WHERE ID=3;
+
+output
+1|Tabernacle at Pendrell Vale|n/a|n/a|Land|n/a|false|2|1
+2|Cathartic Reunion|Red|1R|Sorcery|n/a|true|1|2
+4|Gideon, Ally of Zendikar|White|2WW|Planeswalker|n/a|true|1|4
+5|Emrakul, the Promised End|n/a|13|Creature|13/13|true|1|3
+6|Mana Drain|Blue|UU|Instant|n/a|false|3|1
