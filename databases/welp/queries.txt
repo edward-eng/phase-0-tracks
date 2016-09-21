@@ -1,0 +1,46 @@
+RELEASE 2 - FIND THE THING 1 & 2
+
+command
+NATURAL JOIN:
+SELECT * FROM users, businesses NATURAL JOIN reviews;
+
+output
+1|Bradford|Pitt|1|Grundy Hollow Wedding Chapel|5|great food!|1|1
+1|Bradford|Pitt|2|Amir's Towing|5|great food!|1|1
+1|Bradford|Pitt|3|The Beagle Nightclub|5|great food!|1|1
+1|Bradford|Pitt|4|Lotus Yoga|5|great food!|1|1
+2|Mandy|Kaling|1|Grundy Hollow Wedding Chapel|4|pretty good!|2|3
+2|Mandy|Kaling|2|Amir's Towing|4|pretty good!|2|3
+2|Mandy|Kaling|3|The Beagle Nightclub|4|pretty good!|2|3
+2|Mandy|Kaling|4|Lotus Yoga|4|pretty good!|2|3
+3|Angela|Jolie|1|Grundy Hollow Wedding Chapel|1|terrible|3|3
+3|Angela|Jolie|2|Amir's Towing|1|terrible|3|3
+3|Angela|Jolie|3|The Beagle Nightclub|1|terrible|3|3
+3|Angela|Jolie|4|Lotus Yoga|1|terrible|3|3
+4|Steven|Wonder|1|Grundy Hollow Wedding Chapel|3|average|1|2
+4|Steven|Wonder|2|Amir's Towing|3|average|1|2
+4|Steven|Wonder|3|The Beagle Nightclub|3|average|1|2
+4|Steven|Wonder|4|Lotus Yoga|3|average|1|2
+
+RELEASE 2 - FIND THE THING 3
+
+command
+SELECT users.First_name, users.Last_name, businesses.name,reviews.stars,reviews.comment FROM users JOIN reviews ON users.ID = reviews.user_id JOIN businesses ON businesses.ID = reviews.business_id;
+
+output
+Angela|Jolie|Amir's Towing|4|pretty good!
+Angela|Jolie|The Beagle Nightclub|1|terrible
+Mandy|Kaling|Grundy Hollow Wedding Chapel|3|average
+Angela|Jolie|Lotus Yoga|3|okay
+Steven|Wonder|The Beagle Nightclub|4|great service
+Angela|Jolie|Lotus Yoga|3|okay
+Bradford|Pitt|Grundy Hollow Wedding Chapel|5|great food!
+
+RELEASE 2 - FIND THE THING 4
+
+command
+SELECT users.First_name, users.Last_name, businesses.name,reviews.stars,reviews.comment FROM users JOIN reviews ON users.ID = reviews.user_id JOIN businesses ON businesses.ID = reviews.business_id WHERE business_id = 1;
+
+output
+Mandy|Kaling|Grundy Hollow Wedding Chapel|3|average
+Bradford|Pitt|Grundy Hollow Wedding Chapel|5|great food!
