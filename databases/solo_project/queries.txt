@@ -69,7 +69,11 @@ This seems like a good resource...https://www.tutorialspoint.com/sqlite/sqlite_u
 RELEASE 3 - FIND THE THING 2
 
 command
-SELECT ID, Name FROM cards LEFT OUTER JOIN sets ON cards.ID = sets.ID;
+SELECT cards.ID, cards.Name FROM cards LEFT OUTER JOIN sets ON cards.ID = sets.ID;
 
-output - I keep getting the following error...
-Error: ambiguous column name: ID
+output
+1|Tabernacle at Pendrell Vale
+2|Cathartic Reunion
+4|Gideon, Ally of Zendikar
+5|Emrakul, the Promised End
+6|Mana Drain
