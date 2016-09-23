@@ -19,7 +19,7 @@ create_shoppers_table = <<-SQL
 SQL
 
 create_business_owners_table = <<-SQL
-  CREATE TABLE IF NOT EXISTS shoppers(
+  CREATE TABLE IF NOT EXISTS business_owners(
     ID INTEGER PRIMARY KEY,
     First_Name VARCHAR(255),
 	Last_Name VARCHAR(255),
@@ -31,8 +31,20 @@ create_business_owners_table = <<-SQL
   )
 SQL
 
+create_deals_table = <<-SQL
+  CREATE TABLE IF NOT EXISTS deals(
+    ID INTEGER PRIMARY KEY,
+    Item_Name VARCHAR(255),
+	City VARCHAR(255),
+	Price VARCHAR(255),
+	Biz_Owner_ID VARCHAR(255),
+	FOREIGN KEY (Biz_Owner_ID) REFERENCES business_owners(ID)
+  )
+SQL
+
 db.execute(create_shoppers_table)
 db.execute(create_business_owners_table)
+db.execute(create_deals_table)
 
 # DEALS FINDER CLASS
 
@@ -48,10 +60,15 @@ class Deals_Finder
 	def create_business_owner(db, first_name, last_name, email, biz_name, biz_phone, biz_fein, df_password)
 		db.execute("INSERT INTO business_owners (First_Name, Last_Name, Email_Address, Business_Name, Business_Phone, Business_FEIN, DF_Password) VALUES (?, ?, ?, ?, ?, ?, ?)", [first_name, last_name, email, biz_name, biz_phone, biz_fein, df_password])
 	end
+
+	def create_deal(db, item_name, city, price, biz_owner_id)
+		db.execute("INSERT INTO deals (Item_Name, City, Price, Biz_Owner_ID,) VALUES (?, ?, ?, ?)", [first_name, last_name, email, item_name, city, price, biz_owner_id])
+	end
 end
 
 # USER INTERFACE
 
+deals = Deals_Finder.new
 puts "Welcome to Deals Finder! Are you a new user?"
 puts "Kindly choose one: yes or no"
 new_user = gets.chomp.downcase
