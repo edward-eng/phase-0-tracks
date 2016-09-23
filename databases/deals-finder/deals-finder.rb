@@ -25,6 +25,7 @@ create_business_owners_table = <<-SQL
 	Last_Name VARCHAR(255),
 	Email_Address VARCHAR(255),
 	Business_Name VARCHAR(255),
+	Business_Address VARCHAR(255),
 	Business_Phone VARCHAR(255),
 	Business_FEIN VARCHAR(255),
 	DF_Password VARCHAR(255)
@@ -57,8 +58,8 @@ class Deals_Finder
 		db.execute("INSERT INTO shoppers (First_Name, Last_Name, Email_Address, DF_Password) VALUES (?, ?, ?, ?)", [first_name, last_name, email, df_password])
 	end
 
-	def create_business_owner(db, first_name, last_name, email, biz_name, biz_phone, biz_fein, df_password)
-		db.execute("INSERT INTO business_owners (First_Name, Last_Name, Email_Address, Business_Name, Business_Phone, Business_FEIN, DF_Password) VALUES (?, ?, ?, ?, ?, ?, ?)", [first_name, last_name, email, biz_name, biz_phone, biz_fein, df_password])
+	def create_business_owner(db, first_name, last_name, email, biz_name, biz_address, biz_phone, biz_fein, df_password)
+		db.execute("INSERT INTO business_owners (First_Name, Last_Name, Email_Address, Business_Name, Business_Address, Business_Phone, Business_FEIN, DF_Password) VALUES (?, ?, ?, ?, ?, ?, ?)", [first_name, last_name, email, biz_name, biz_address, biz_phone, biz_fein, df_password])
 	end
 
 	def create_deal(db, item_name, city, price, biz_owner_id)
@@ -86,6 +87,7 @@ if new_user == "yes"
 		shopper_email = gets.chomp
 		puts "Please create a Deals Finder password."
 		shopper_df_password = gets.chomp
+		deals.create_shopper(db, shopper_first_name, shopper_last_name, shopper_email, shopper_df_password)
 	else new_user_type == 'business owner'
 		puts "What's your first name?"
 		biz_owner_first_name = gets.chomp
@@ -103,6 +105,7 @@ if new_user == "yes"
 		business_fein = gets.chomp
 		puts "Please create a Deals Finder password."
 		biz_owner_df_password = gets.chomp
+		deals.create_business_owner(db, biz_owner_first_name, biz_owner_last_name, biz_owner_email, business_name, business_address, business_phone, business_fein, biz_owner_df_password)
 	end
 else new_user == "no"
 	puts "What kind of user are you?"
