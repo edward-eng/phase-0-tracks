@@ -1,5 +1,55 @@
 ### DEALS FINDER ###
 
+# REQUIRE GEMS
+
+require 'sqlite3'
+
+# CREATE SQLite3 DATABASE
+
+db = SQLite3::Database.new("deals-finder.db")
+
+create_shoppers_table = <<-SQL
+  CREATE TABLE IF NOT EXISTS shoppers(
+    ID INTEGER PRIMARY KEY,
+    First_Name VARCHAR(255),
+	Last_Name VARCHAR(255),
+	Email_Address VARCHAR(255),
+	DF_Password VARCHAR(255)
+  )
+SQL
+
+create_business_owners_table = <<-SQL
+  CREATE TABLE IF NOT EXISTS shoppers(
+    ID INTEGER PRIMARY KEY,
+    First_Name VARCHAR(255),
+	Last_Name VARCHAR(255),
+	Email_Address VARCHAR(255),
+	Business_Name VARCHAR(255),
+	Business_Phone VARCHAR(255),
+	Business_FEIN VARCHAR(255),
+	DF_Password VARCHAR(255)
+  )
+SQL
+
+db.execute(create_shoppers_table)
+db.execute(create_business_owners_table)
+
+# DEALS FINDER CLASS
+
+class Deals_Finder
+
+	def initialize
+	end
+
+	def create_shopper(db, first_name, last_name, email, df_password)
+		db.execute("INSERT INTO shoppers (First_Name, Last_Name, Email_Address, DF_Password) VALUES (?, ?, ?, ?)", [first_name, last_name, email, df_password])
+	end
+
+	def create_business_owner(db, first_name, last_name, email, biz_name, biz_phone, biz_fein, df_password)
+		db.execute("INSERT INTO business_owners (First_Name, Last_Name, Email_Address, Business_Name, Business_Phone, Business_FEIN, DF_Password) VALUES (?, ?, ?, ?, ?, ?, ?)", [first_name, last_name, email, biz_name, biz_phone, biz_fein, df_password])
+	end
+end
+
 # USER INTERFACE
 
 puts "Welcome to Deals Finder! Are you a new user?"
