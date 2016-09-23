@@ -65,6 +65,10 @@ class Deals_Finder
 	def create_deal(db, item_name, city, price, biz_owner_id)
 		db.execute("INSERT INTO deals (Item_Name, City, Price, Biz_Owner_ID,) VALUES (?, ?, ?, ?)", [first_name, last_name, email, item_name, city, price, biz_owner_id])
 	end
+
+	def search_results(db, city)
+		db.execute("SELECT * FROM deals (City) VALUES (?)", [city])
+	end
 end
 
 # USER INTERFACE
@@ -118,6 +122,7 @@ else new_user == "no"
 	if returning_user_type == "shopper"
 		puts "What city would you like to search?"
 		city_search = gets.chomp
+		deals.search_results(db, city_search)
 	else returning_user_type == "business owner"
 		biz_owner_id = returning_user_email
 		puts "Please enter an item name."
