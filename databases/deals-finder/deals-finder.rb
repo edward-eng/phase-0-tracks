@@ -119,11 +119,13 @@ else new_user == "no"
 		puts "What city would you like to search?"
 		city_search = gets.chomp
 	else returning_user_type == "business owner"
+		biz_owner_id = returning_user_email
 		puts "Please enter an item name."
 		deal_item = gets.chomp
 		puts "What city is this item sold in?"
 		deal_city = gets.chomp
 		puts "What's the price of the item?"
 		item_price = gets.chomp
+		deals.create_deal(db, deal_item, deal_city, item_price, biz_owner_id)
 	end
 end
