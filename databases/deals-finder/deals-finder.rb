@@ -63,14 +63,14 @@ class Deals_Finder
 		db.execute("INSERT INTO business_owners (First_Name, Last_Name, Email_Address, Business_Name, Business_Address, Business_Phone, Business_FEIN, DF_Password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [first_name, last_name, email, biz_name, biz_address, biz_phone, biz_fein, df_password])
 	end
 
-	def create_deal(db, item_name, city, price, biz_owner_id)
-		db.execute("INSERT INTO deals (Item_Name, City, Price, Biz_Owner_ID) VALUES (?, ?, ?, ?)", [item_name, city, price, biz_owner_id])
+	def create_deal(db, item_name, city, price, biz_name, biz_address, biz_phone, biz_owner_id)
+		db.execute("INSERT INTO deals (Item_Name, City, Price, Business_Name, Business_Address, Business_Phone, Biz_Owner_ID) VALUES (?, ?, ?, ?, ?, ?, ?)", [item_name, city, price, biz_name, biz_address, biz_phone, biz_owner_id])
 	end
 
 	def search_results(db, city)
     	results = db.execute("SELECT * FROM deals WHERE City=(?)", [city])
     	results.each do | result |
-    		puts "#{result['ID']}|#{result['Item_Name']}|#{result['City']}|#{result['Price']}"
+    		puts "#{result['ID']}|#{result['Item_Name']}|#{result['City']}|#{result['Price']}|#{result['Business_Name']}|#{result['Business_Address']}|#{result['Business_Phone']}"
     	end
     end
 end
@@ -135,6 +135,12 @@ else new_user == "no"
 		deal_city = gets.chomp
 		puts "What's the price of the item?"
 		item_price = gets.chomp
-		deals.create_deal(db, deal_item, deal_city, item_price, biz_owner_id)
+		puts "What's the name of the business this item is sold at?"
+		deal_venue = gets.chomp
+		puts "What's the address of the business this item is sold at?"
+		deal_address = gets.chomp
+		puts "What's the phone number of the business this item is sold at?"
+		deal_inquiry = gets.chomp
+		deals.create_deal(db, deal_item, deal_city, item_price, deal_venue, deal_address, deal_inquiry, biz_owner_id)
 	end
 end
