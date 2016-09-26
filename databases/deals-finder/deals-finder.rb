@@ -60,30 +60,54 @@ class Deals_Finder
 	def initialize
 	end
 
-	def create_shopper(db, first_name, last_name, email, df_password)
+	def create_shopper(db)
+		puts "What's your first name?"
+		first_name = gets.chomp
+		puts "What's your last name?"
+		last_name = gets.chomp
+		puts "What's your email address?"
+		email = gets.chomp
+		puts "Please create a Deals Finder password."
+		df_password = STDIN.noecho(&:gets).chomp
 		db.execute("INSERT INTO shoppers (First_Name, Last_Name, Email_Address, DF_Password) VALUES (?, ?, ?, ?)", [first_name, last_name, email, df_password])
 	end
 
-	def create_business_owner(db, first_name, last_name, email, biz_name, biz_address, biz_phone, biz_fein, df_password)
-		db.execute("INSERT INTO business_owners (First_Name, Last_Name, Email_Address, Business_Name, Business_Address, Business_Phone, Business_FEIN, DF_Password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [first_name, last_name, email, biz_name, biz_address, biz_phone, biz_fein, df_password])
+	def create_business_owner(db)
+		puts "What's your first name?"
+		first_name = gets.chomp
+		puts "What's your last name?"
+		last_name = gets.chomp
+		puts "What's your email address?"
+		email = gets.chomp
+		puts "What's the name of your business?"
+		business_name = gets.chomp
+		puts "What's the address of your business?"
+		business_address = gets.chomp
+		puts "What's the phone number of your business?"
+		business_phone = gets.chomp
+		puts "What's your business's Federal Employer Identification Number (FEIN or EIN)?"
+		fein = gets.chomp
+		puts "Please create a Deals Finder password."
+		df_password = STDIN.noecho(&:gets).chomp
+		db.execute("INSERT INTO business_owners (First_Name, Last_Name, Email_Address, Business_Name, Business_Address, Business_Phone, Business_FEIN, DF_Password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [first_name, last_name, email, business_name, business_address, business_phone, fein, df_password])
 	end
 
 	def create_deal(db, biz_owner_id)
 		loop do
 			puts "Please enter an item name. (type 'q' to exit)"
-			deal_item = gets.chomp.downcase
-			break if deal_item == 'q'
+			item = gets.chomp.downcase
+			break if item == 'q'
 			puts "What city is this item sold in?"
-			deal_city = gets.chomp.downcase
+			city = gets.chomp.downcase
 			puts "What's the price of the item?"
-			item_price = gets.chomp
+			price = gets.chomp
 			puts "What's the name of the business this item is sold at?"
-			deal_venue = gets.chomp
+			venue = gets.chomp
 			puts "What's the address of the business this item is sold at?"
-			deal_address = gets.chomp
+			address = gets.chomp
 			puts "What's the phone number of the business this item is sold at?"
-			deal_inquiry = gets.chomp
-			db.execute("INSERT INTO deals (Item_Name, City, Price, Business_Name, Business_Address, Business_Phone, Biz_Owner_ID) VALUES (?, ?, ?, ?, ?, ?, ?)", [deal_item, deal_city, item_price, deal_venue, deal_address, deal_inquiry, biz_owner_id])
+			inquiry = gets.chomp
+			db.execute("INSERT INTO deals (Item_Name, City, Price, Business_Name, Business_Address, Business_Phone, Biz_Owner_ID) VALUES (?, ?, ?, ?, ?, ?, ?)", [item, city, price, venue, address, inquiry, biz_owner_id])
 		end
 	end
 
@@ -143,34 +167,10 @@ if new_user == "yes"
 	puts "Kindly choose one: business owner or shopper"
 	new_user_type = gets.chomp.downcase
 	if new_user_type == "shopper"
-		puts "What's your first name?"
-		shopper_first_name = gets.chomp
-		puts "What's your last name?"
-		shopper_last_name = gets.chomp
-		puts "What's your email address?"
-		shopper_email = gets.chomp
-		puts "Please create a Deals Finder password."
-		shopper_df_password = STDIN.noecho(&:gets).chomp
-		deals.create_shopper(db, shopper_first_name, shopper_last_name, shopper_email, shopper_df_password)
+		deals.create_shopper(db)
 	else
 		new_user_type == 'business owner'
-		puts "What's your first name?"
-		biz_owner_first_name = gets.chomp
-		puts "What's your last name?"
-		biz_owner_last_name = gets.chomp
-		puts "What's your email address?"
-		biz_owner_email = gets.chomp
-		puts "What's the name of your business?"
-		business_name = gets.chomp
-		puts "What's the address of your business?"
-		business_address = gets.chomp
-		puts "What's the phone number of your business?"
-		business_phone = gets.chomp
-		puts "What's your business's Federal Employer Identification Number (FEIN or EIN)?"
-		business_fein = gets.chomp
-		puts "Please create a Deals Finder password."
-		biz_owner_df_password = STDIN.noecho(&:gets).chomp
-		deals.create_business_owner(db, biz_owner_first_name, biz_owner_last_name, biz_owner_email, business_name, business_address, business_phone, business_fein, biz_owner_df_password)
+		deals.create_business_owner(db)
 	end
 else new_user == "no"
 	puts "What kind of user are you?"
