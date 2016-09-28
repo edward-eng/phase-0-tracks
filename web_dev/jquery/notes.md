@@ -52,3 +52,8 @@ Look at and play around with code examples.
 ### APPLY YOUR LEARNINGS
 ----------
 Test at least one thing learned about jQuery.
+-Applied jquery to Taco World project.
+
+### NOTES
+----------
+The plan was pretty useful since it provided a structural approach to learing jQuery in a short period of time. I spent a few minutes looking through an overview. Then I found a cheat sheet that was visually presented well and interactive to refer back to. Watching a YouTube tutorial video helped me further understand the process of implementing and using jQuery. Practices exercises on a site like w3schools quickly helped me apply what I learned. I also went to office hours to strengthen my knowledge. I also referred back to the video as I applied jQuery to my own sample project (Taco World). Don't forget to check out the Taco Wave™!
