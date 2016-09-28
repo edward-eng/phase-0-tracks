@@ -1,11 +1,7 @@
 $(document).ready(function(){
-	console.log("test");
 
 	var paragraph = document.getElementsByTagName("p");
-	console.log(paragraph);
-
 	firstPara = paragraph[0];
-	console.log(firstPara);
 	firstPara.style.fontFamily = "Arial,Charcoal,sans-serif";
 	firstPara.style.fontSize = "12pt";
 
