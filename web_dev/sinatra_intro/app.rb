@@ -73,7 +73,7 @@ end
 # Write a GET route that takes a campus location as a query parameter and responds with all students at that location.
 get '/' do
   campus = params[:campus]
-  response = "something"
+  response = ""
   students = db.execute("SELECT * FROM students WHERE campus=?", [campus])
   students.each do |student|
     response << "ID: #{student['id']}<br>"
